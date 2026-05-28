@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:url("imagenes/FondoBody.png") no-repeat center center/cover;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.75),
+    rgba(180,255,180,0.4)
+  );
+
+  border: 1.5px solid rgba(108,140,92,0.6);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.header img {
+  width: 25px;
+}
+
+/* ICONO */
+.icono-top img {
+  width: 70px;
+  margin: 10px 0;
+}
+
+/* TITULOS */
+h2 {
+  margin: 10px 0;
+}
+
+.sub {
+  font-size: 14px;
+  color: #555;
+}
+
+.info {
+  font-size: 13px;
+  margin: 15px 0;
+  color: #333;
+}
+
+/* INPUTS */
+.input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(200,200,200,0.5);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.input-box img {
+  width: 20px;
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+/* LINK */
+.metodo {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #5f8f4f;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+/* BOTON */
+.btn {
+  width: 70%;
+  padding: 12px;
+  background: #5f8f4f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4e7a40;
+}
+
+/* VOLVER */
+.volver {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.volver a {
+  color: #5f8f4f;
+  text-decoration: none;
+}

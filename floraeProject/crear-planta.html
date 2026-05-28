@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florae</title>
+
+  <link rel="stylesheet" href="crear-planta.css">
+
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo">
+        <img src="imagenes/logo.png" class="logo-img" alt="logo">
+        <span>Florae</span>
+      </div>
+
+      <div class="menu">
+
+        <a href="#">
+          <i class="ti ti-layout-dashboard"></i>
+          Dashboard
+        </a>
+
+        <a href="#" class="active">
+          <i class="ti ti-leaf"></i>
+          Plantas
+        </a>
+
+        <a href="#">
+          <i class="ti ti-bug"></i>
+          Plagas
+        </a>
+
+        <a href="#">
+          <i class="ti ti-users"></i>
+          Usuarios
+        </a>
+
+        <a href="#">
+          <i class="ti ti-history"></i>
+          Historial
+        </a>
+
+      </div>
+
+    </div>
+
+    <a href="#" class="menu logout">
+      <span>
+        <i class="ti ti-logout"></i>
+        Cerrar sesión
+      </span>
+    </a>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOP -->
+
+    <div class="top">
+
+      <div>
+
+        <div class="bread">
+          <span>Plantas</span>
+          <span>></span>
+          <span>Agregar Nueva planta</span>
+        </div>
+
+        <h1>Crear nueva planta</h1>
+
+        <p>Completa la información de la planta</p>
+
+      </div>
+
+      <div class="user">
+
+        <div class="avatar">
+          A
+        </div>
+
+        Administrador
+
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+      <!-- LEFT -->
+
+      <div>
+
+        <!-- INFO -->
+
+        <div class="card">
+
+          <h2>
+            <i class="ti ti-clipboard-text"></i>
+            Información básica
+          </h2>
+
+          <div class="group">
+            <label>Nombre Científico*</label>
+            <input type="text" placeholder="Ejm. Orquídea Cattleya">
+          </div>
+
+          <div class="group">
+            <label>Nombre Común*</label>
+            <input type="text" placeholder='"Flor de mayo"'>
+          </div>
+
+          <div class="group">
+            <label>Descripción*</label>
+            
+
+            <textarea>
+Es una de las orquídeas más hermosas y famosas del mundo...
+            </textarea>
+
+          </div>
+
+        </div>
+
+        <!-- CUIDADOS -->
+<br>
+<br>
+<br>
+
+        <div class="card">
+
+          <h2>
+            <i class="ti ti-notebook"></i>
+            Ficha técnica y cuidados esenciales
+          </h2>
+
+          <div class="grid-2">
+
+            <div class="group">
+              <label>Riego</label>
+              <input type="text" placeholder="Ejm.riego:cada 7 días,dejar secar sustrato">
+            </div>
+
+            <div class="group">
+              <label>Luz</label>
+              <input type="text" placeholder="Ejm. Luz: sin sol directo">
+            </div>
+
+            <div class="group">
+              <label>Temperatura</label>
+              <input type="text" placeholder="Ejm.Temperatura:29°C - 15°C">
+            </div>
+
+            <div class="group">
+              <label>Fertilización</label>
+              <input type="text" placeholder="Ejm. Fertilización 1 cc x un 1 L de agua">
+            </div>
+
+          </div>
+
+          <div class="group">
+
+            <label>Recomendaciones y advertencias</label>
+
+            <div id="recList">
+
+              <div class="item">
+                <div class="rec-text">
+                  <i class="ti ti-alert-triangle"></i>
+                  <span>El sol directo quema las hojas</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="rec-text">
+                  <i class="ti ti-bulb"></i>
+                  <span>Riégala cuando el suelo este seco al tacto, no la ahogues</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div>
+
+        <!-- IMAGEN -->
+
+        <div class="card">
+
+          <h2>
+            <i class="ti ti-photo"></i>
+            Imagen de la planta
+          </h2>
+
+          <div class="preview" id="preview">
+
+            <img src="imagenes/plantas.png" alt="Imagen de la planta">
+
+          </div>
+
+          <button class="btn btn-full" onclick="file.click()">
+            Cambiar Imagen
+          </button>
+
+          <input type="file" id="file" hidden>
+
+        </div>
+
+        <!-- ORIGEN -->
+
+        <div class="card">
+
+          <h2>
+            <i class="ti ti-world"></i>
+            <br>
+            Origen y características
+          </h2>
+
+          <div class="grid-3">
+
+            <div class="group">
+
+              <label>Origen</label>
+
+              <input type="text" value="Colombia">
+
+            </div>
+
+            <div class="group">
+
+              <label>Tipo de planta</label>
+
+              <select>
+                <option>Decorativa</option>
+                <option>Medicinal</option>
+                <option>Culinaria</option>
+                <option>Todas</option>
+              </select>
+
+            </div>
+
+            <div class="group">
+
+              <label>Clima</label>
+
+              <select>
+                <option>Tropical</option>
+                <option>Templado</option>
+                <option>Frío</option>
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- NOMBRES -->
+
+        <div class="card">
+
+          <h2>
+            <i class="ti ti-users"></i>
+            Nombres comunes alternativos
+          </h2>
+
+          <p>
+            Agrega otros nombres comunes con los que se conoce esta planta
+          </p>
+
+          <div class="grid-2">
+
+            <div class="group">
+              <label>Nombre común 1</label>
+              <input type="text" placeholder="Ejm. Orquídea Reina">
+            </div>
+
+            <div class="group">
+              <label>Nombre común 2</label>
+              <input type="text" placeholder="Ejm. Flor de mayo">
+            </div>
+
+            <div class="group">
+              <label>Nombre común 3</label>
+              <input type="text" placeholder="Ejm. Flor de cattleya">
+            </div>
+
+            <div class="group">
+              <label>Nombre común 4</label>
+              <input type="text" placeholder="Ejm. Flor de cattleya">
+            </div>
+
+
+           
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="actions">
+
+      <button class="btn cancel">
+        Cancelar
+      </button>
+
+      <button class="btn">
+        Publicar planta
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+file.addEventListener("change", e => {
+
+  const archivo = e.target.files[0];
+
+  if(!archivo) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(ev){
+
+    preview.innerHTML = `
+      <img src="${ev.target.result}">
+    `;
+
+  }
+
+  reader.readAsDataURL(archivo);
+
+});
+
+</script>
+
+</body>
+</html>

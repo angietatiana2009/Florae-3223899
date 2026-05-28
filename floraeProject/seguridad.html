@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florae – Seguridad</title>
+  <link rel="stylesheet" href="seguridad.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .security-block {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .security-block:last-of-type { border-bottom: none; }
+    .security-block__header {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .security-block__title { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .security-block__desc  { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Modal password */
+    #modal-password { display: none; }
+    #modal-password.active { display: flex; }
+    #modal-sessions { display: none; }
+    #modal-sessions.active { display: flex; }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__brand-icon">🌿</span>
+      <div>
+        <div class="sidebar__brand-name">Florae</div>
+        <div class="sidebar__brand-sub">Panel de administración</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="sidebar__link" href="#">⌂ Dashboard</a>
+      <a class="sidebar__link" href="#">🌱 Plantas</a>
+      <a class="sidebar__link" href="#">🐛 Plagas / Enfermedades</a>
+      <a class="sidebar__link" href="#">🪴 Sustratos</a>
+      <a class="sidebar__link" href="#">👤 Usuarios</a>
+      <a class="sidebar__link" href="#">🕘 Historial de cambios</a>
+      <a class="sidebar__link sidebar__link--active" href="#">⚙ Configuración</a>
+    </nav>
+    <div class="sidebar__deco"></div>
+    <a class="sidebar__logout" href="#">↪ Cerrar sesión</a>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Configuración <span class="leaf">🌿</span></h1>
+        <p>Administra las preferencias del sistema</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="topbar__bell">🔔</button>
+        <div class="topbar__user">
+          <div class="topbar__avatar">A</div>
+          <span>Administrador</span>
+          <span class="topbar__chevron">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <aside class="settings-nav">
+        <a class="settings-nav__item" href="general.html">⚙ General</a>
+        <a class="settings-nav__item" href="notificaciones.html">🔔 Notificaciones</a>
+        <a class="settings-nav__item settings-nav__item--active" href="seguridad.html">🛡 Seguridad</a>
+        <a class="settings-nav__item" href="apariencia.html">🎨 Apariencia</a>
+        <a class="settings-nav__item" href="respaldo.html">☁ Respaldo</a>
+        <a class="settings-nav__item" href="acerca-de.html">ℹ Acerca de</a>
+      </aside>
+
+      <section class="panel">
+        <h2 class="panel__heading">Seguridad</h2>
+        <p class="panel__sub">Administra opciones de seguridad y acceso al sistema.</p>
+        <div class="panel__divider"></div>
+
+        <!-- Contraseña -->
+        <div class="security-block">
+          <div class="security-block__header">
+            <div>
+              <div class="security-block__title">Contraseña actual</div>
+              <div class="security-block__desc">Ingresa tu contraseña actual para realizar cambios.</div>
+            </div>
+            <button class="btn-outline" onclick="document.getElementById('modal-password').classList.add('active')">
+              Cambiar contraseña
+            </button>
+          </div>
+        </div>
+
+        <!-- Sesiones -->
+        <div class="security-block">
+          <div class="security-block__header">
+            <div>
+              <div class="security-block__title">Sesiones activas</div>
+              <div class="security-block__desc">Gestiona las sesiones activas en tu cuenta.</div>
+            </div>
+            <button class="btn-outline" onclick="document.getElementById('modal-sessions').classList.add('active')">
+              Ver sesiones
+            </button>
+          </div>
+        </div>
+
+        <!-- 2FA -->
+        <div class="security-block">
+          <div class="security-block__header">
+            <div>
+              <div class="security-block__title">Autenticación en dos pasos</div>
+              <div class="security-block__desc">Añade una capa extra de seguridad a tu cuenta.</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked />
+              <span class="toggle-switch__track"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Política de contraseñas -->
+        <div class="security-block">
+          <div class="security-block__header">
+            <div>
+              <div class="security-block__title">Política de contraseñas</div>
+              <div class="security-block__desc">Requiere contraseñas seguras para todos los usuarios.</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked />
+              <span class="toggle-switch__track"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel__footer">
+          <button class="btn-save">🔒 Guardar cambios</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal: Cambiar contraseña -->
+  <div class="modal-overlay" id="modal-password">
+    <div class="modal">
+      <div class="modal__header">
+        <div class="modal__title">🔒 Cambiar contraseña</div>
+        <button class="modal__close" onclick="document.getElementById('modal-password').classList.remove('active')">✕</button>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña actual</label>
+        <div class="input-wrapper">
+          <input type="password" class="form-input" placeholder="Ingresa tu contraseña actual" style="width:100%;" />
+          <button class="input-wrapper__eye">👁</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Nueva contraseña</label>
+        <div class="input-wrapper">
+          <input type="password" class="form-input" placeholder="Ingresa tu nueva contraseña" style="width:100%;" />
+          <button class="input-wrapper__eye">👁</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Confirmar nueva contraseña</label>
+        <div class="input-wrapper">
+          <input type="password" class="form-input" placeholder="Confirma tu nueva contraseña" style="width:100%;" />
+          <button class="input-wrapper__eye">👁</button>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button class="btn-ghost" onclick="document.getElementById('modal-password').classList.remove('active')">Cancelar</button>
+        <button class="btn-save">🔒 Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Sesiones activas -->
+  <div class="modal-overlay" id="modal-sessions">
+    <div class="modal" style="width:520px;">
+      <div class="modal__header">
+        <div class="modal__title">💻 Sesiones activas</div>
+        <button class="modal__close" onclick="document.getElementById('modal-sessions').classList.remove('active')">✕</button>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Estas son las sesiones activas en tu cuenta.</p>
+
+      <div class="session-item">
+        <div class="session-icon">💻</div>
+        <div class="session-info">
+          <div class="session-info__name">Windows · Chrome</div>
+          <div class="session-info__detail">Lima, Perú · <span class="badge-current">Esta sesión</span></div>
+        </div>
+        <div class="session-date">18 May 2025</div>
+        <button class="session-menu">⋯</button>
+      </div>
+
+      <div class="session-item">
+        <div class="session-icon">🍎</div>
+        <div class="session-info">
+          <div class="session-info__name">MacOS · Safari</div>
+          <div class="session-info__detail">Bogotá, Colombia</div>
+        </div>
+        <div class="session-date">17 May 2025<br><span style="font-size:11px;">04:30 p.m.</span></div>
+        <button class="session-menu">⋯</button>
+      </div>
+
+      <div class="session-item">
+        <div class="session-icon">📱</div>
+        <div class="session-info">
+          <div class="session-info__name">Android · Chrome</div>
+          <div class="session-info__detail">Quito, Ecuador</div>
+        </div>
+        <div class="session-date">16 May 2025<br><span style="font-size:11px;">09:15 a.m.</span></div>
+        <button class="session-menu">⋯</button>
+      </div>
+
+      <div class="modal__footer">
+        <button class="btn-outline" onclick="document.getElementById('modal-sessions').classList.remove('active')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

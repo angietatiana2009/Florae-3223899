@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Jardín</title>
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Archivo de estilos separado -->
+  <link rel="stylesheet" href="mi perfil.css">
+</head>
+<body>
+
+<div id="toast">✅ Cambios guardados</div>
+
+<nav>
+  <div class="nav-logo" onclick="goPage('perfil','nav-perfil-link')" title="Inicio">🌱</div>
+  <div class="nav-links">
+    <a id="nav-jardin-link" onclick="goPage('jardin','nav-jardin-link')">Mi jardín</a>
+    <a id="nav-explorar-link" onclick="goPage('explorar','nav-explorar-link')" class="active">Explorar</a>
+    <a id="nav-calendario-link" onclick="goPage('calendario','nav-calendario-link')">Calendario</a>
+  </div>
+  <div class="nav-right">
+    <span class="nav-lang" id="nav-lang" onclick="cycleLang()">Español</span>
+    <div class="nav-avatar" id="nav-avatar" onclick="goSide('perfil')" title="Mi perfil">MG</div>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside>
+    <div class="s-item active" id="side-perfil" onclick="goSide('perfil')">
+      <div class="s-icon">👤</div>
+      <div><div class="s-label">Mi Perfil</div><div class="s-sub">Información personal</div></div>
+    </div>
+    <div class="s-item" id="side-config" onclick="goSide('config')">
+      <div class="s-icon">⚙️</div>
+      <div><div class="s-label">Configuración</div><div class="s-sub">Preferencias</div></div>
+    </div>
+    <div class="s-item" id="side-notif" onclick="goSide('notif')">
+      <div class="s-icon">🔔</div>
+      <div><div class="s-label">Notificaciones</div><div class="s-sub">Gestiona alertas</div></div>
+    </div>
+    <div class="s-item" id="side-privacidad" onclick="goSide('privacidad')">
+      <div class="s-icon">🛡️</div>
+      <div><div class="s-label">Privacidad</div><div class="s-sub">Tu información</div></div>
+    </div>
+    <div class="s-spacer"></div>
+    <div class="s-logout" onclick="logout()">
+      <span style="font-size:16px">🚪</span>
+      <span>Cerrar Sesión</span>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ────────── MI PERFIL ────────── -->
+    <div class="page show" id="page-perfil">
+      <div class="ph">
+        <div><div class="pt">Mi perfil</div><div class="ps">Edita tu información personal</div></div>
+        <button class="btn-primary" onclick="openModal()">✏️ Editar Perfil</button>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-deco">🌿🌿</div>
+        <div class="av-wrap" onclick="document.getElementById('file-input-main').click()" title="Cambiar foto">
+          <div class="av-circle" id="main-avatar">MG</div>
+          <div class="av-overlay">📷</div>
+          <div class="av-cam">📷</div>
+        </div>
+        <div>
+          <div class="profile-name" id="display-name">Maria Garcia</div>
+          <div class="profile-email" id="display-email">MariaGarcia123@gmail.com</div>
+          <div style="font-size:12px;color:var(--tl);margin-top:2px" id="display-bio">Amante de las plantas 🌿 | Bogotá</div>
+          <div class="badge-active"><div class="bdot"></div>Miembro Activo</div>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="stitle">👤 Información Personal</div>
+        <div class="irow" onclick="openModal()">
+          <span style="font-size:16px">🧑</span>
+          <span class="ilabel">Nombre completo</span>
+          <div class="ival" id="info-name">Maria Garcia</div>
+          <span class="ichev">›</span>
+        </div>
+        <div class="irow" onclick="openModal()">
+          <span style="font-size:16px">✉️</span>
+          <span class="ilabel">Correo electrónico</span>
+          <div class="ival" id="info-email">MariaGarcia123@gmail.com</div>
+          <span class="ichev">›</span>
+        </div>
+        <div class="irow" onclick="openModal()">
+          <span style="font-size:16px">📱</span>
+          <span class="ilabel">Teléfono</span>
+          <div class="ival" id="info-phone">+57 300 000 0000</div>
+          <span class="ichev">›</span>
+        </div>
+        <div class="irow" onclick="openModal()">
+          <span style="font-size:16px">📍</span>
+          <span class="ilabel">Ubicación</span>
+          <div class="ival" id="info-location">Bogotá, Colombia</div>
+          <span class="ichev">›</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Archivo JavaScript separado -->
+<script src="script.js"></script>
+</body>
+</html>

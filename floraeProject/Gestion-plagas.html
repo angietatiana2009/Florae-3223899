@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagas</title>
+    <link rel="stylesheet" href="Gestion-plagas.css">
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Florae">
+            <span>Florae</span>
+        </div>
+
+        <nav>
+            <a href="/dashboard.html"> <img class="icono" src="/imagenes/casa.png"alt=""> Dashboard</a>
+            <a href="/plantas.html" class="activo"> <img class="icono" src="/imagenes/leaf .png"alt=""> Plantas</a>
+            <a href="/plagas.html"> <img class="icono" src="/imagenes/cockroach.png"alt=""> Plagas</a>
+            <a href="/usuario.html"> <img class="icono" src="/imagenes/user.png"alt=""> Usuarios</a>
+            <a href="/historial.html"> <img class="icono" src="/imagenes/clock.png" alt=""> Historial</a>
+            <a href="/JaiverConfiguracion/General.html"> <img class="icono" src="/imagenes/Vector.png" alt=""> Configuración</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <img src="imagenes/logo.png" alt="logo" class="logo-bottom">
+            <a href="/cerrar-sesion.html" class="cerrar-sesion"> <img class="icono" src="/imagenes/salida-de-incendios.png" alt="">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="topbar">
+            <div class="topbar-titulo">
+                <h1>Gestión de plagas</h1>
+                <p>Administra la información de todas las plagas registradas en el sistema</p>
+            </div>
+            <div class="topbar-right">
+                <button class="btn-campana">🔔</button>
+                <div class="admin">
+                    <div class="admin-avatar">A</div>
+                    <span>Administrador</span>
+                    <span>▾</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="contenido">
+
+            <div class="filtros">
+                <div class="buscador">
+                    <span>🔍</span>
+                    <input type="text" placeholder="Buscar plaga por nombre común o científico">
+                </div>
+                <div class="filtros-right">
+                    <button class="btn-categoria">Categoría ▾</button>
+                    <button class="btn-nueva">+ Nueva planta</button>
+                </div>
+            </div>
+
+            <div class="grilla">
+
+                <div class="tarjeta">
+                    <img src="imagenes/plaga.png" alt="Pulgón">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">Pulgón</div>
+                        <div class="tarjeta-cientifico">"Aphis neril"</div>
+                        <div class="tarjeta-pie">
+                          
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/Babosa.png" alt="Babosa">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">Babosa</div>
+                        <div class="tarjeta-cientifico">“Deroceras reticulatum”</div>
+                        <div class="tarjeta-pie">
+                           
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/cochinilla.png" alt="Cochinilla algodonosa">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">Cochinilla algodonosa</div>
+                        <div class="tarjeta-cientifico">“Planococcus citri”</div>
+                        <div class="tarjeta-pie">
+                         
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/hormiga.png" alt="Araña roja">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">Araña roja</div>
+                        <div class="tarjeta-cientifico">Tetranychus urticae</div>
+                        <div class="tarjeta-pie">
+                         
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/image 102.png" alt="Orugas">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">larvas de mariposa</div>
+                        <div class="tarjeta-cientifico">"Lepidoptera"</div>
+                        <div class="tarjeta-pie">
+                         
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/Gorgojo.jpg" alt="Gorgojo">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">Gorgojo</div>
+                        <div class="tarjeta-cientifico">"Cosmopolites sordidus."</div>
+                        <div class="tarjeta-pie">
+                          
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/image 103.png" alt="Cochinilla de la humedad">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">"Cochinilla de la humedad"</div>
+                        <div class="tarjeta-cientifico">"Armadillidium vulgare"</div>
+                        <div class="tarjeta-pie">
+                            
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/cochinilla escudera.jpg" alt="Cochinilla escudo">
+                    <div class="tarjeta-info">
+                        <div class="tarjeta-nombre">"Cochinilla escudo"</div>
+                        <div class="tarjeta-cientifico">"Mentha spicata L."</div>
+                        <div class="tarjeta-pie">
+                            <div class="tarjeta-btns">
+                                <button class="btn-editar">✏️</button>
+                                <button class="btn-borrar">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="paginacion">
+                <span>Mostrando de 1 a 8 de 20 plantas</span>
+                <div class="paginas">
+                    <button>‹</button>
+                    <button class="activa">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>...</button>
+                    <button>16</button>
+                    <button>›</button>
+                </div>
+                <div class="mostrar">
+                    Mostrar
+                    <select>
+                        <option>8</option>
+                        <option>16</option>
+                        <option>24</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Florae - Configuración</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="seguridad.css">
+</head>
+<body>
+<div class="app-wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-seedling"></i></div>
+      <span class="logo-text">Florae</span>
+    </div>
+
+    <div class="nav-item"><i class="fas fa-house"></i> Dashboard</div>
+    <div class="nav-item"><i class="fas fa-leaf"></i> Plantas</div>
+    <div class="nav-item"><i class="fas fa-bug"></i> Plagas</div>
+    <div class="nav-item"><i class="fas fa-users"></i> Usuarios</div>
+    <div class="nav-item"><i class="fas fa-clock-rotate-left"></i> Historial</div>
+    <div class="nav-item active"><i class="fas fa-gear"></i> Configuración</div>
+
+    <div class="sidebar-bottom">
+      <div class="nav-item"><i class="fas fa-right-from-bracket"></i> Cerrar Sesión</div>
+      <div class="sidebar-logo-bottom"><i class="fas fa-seedling"></i></div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <span class="page-title">Configuración</span>
+      <div class="topbar-right">
+        <button class="notif-btn"><i class="far fa-bell"></i></button>
+        <div class="user-badge">
+          <div class="user-avatar">A</div>
+          <span class="user-name">Administrador</span>
+          <i class="fas fa-chevron-down" style="font-size:11px;color:#8a9a7a;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content-area">
+
+      <!-- SETTINGS NAV -->
+      <div class="settings-sidebar">
+        <div class="settings-item"><i class="fas fa-gear"></i> General</div>
+        <div class="settings-item"><i class="far fa-bell"></i> Notificaciones</div>
+        <div class="settings-item active"><i class="fas fa-shield-halved"></i> Seguridad</div>
+        <div class="settings-item"><i class="fas fa-palette"></i> Apariencia</div>
+        <div class="settings-item"><i class="fas fa-cloud"></i> Respaldo</div>
+        <div class="settings-item"><i class="fas fa-circle-info"></i> Acerca de</div>
+      </div>
+
+      <!-- SETTINGS PANEL -->
+      <div class="settings-panel">
+        <div class="settings-card">
+          <div class="setting-row">
+            <span class="setting-label">Contraseña</span>
+            <button class="btn-outline">Cambiar Contraseña</button>
+          </div>
+          <div class="setting-row">
+            <span class="setting-label">Sesiones activas</span>
+            <button class="btn-outline">Ver sesiones</button>
+          </div>
+          <div class="setting-row">
+            <span class="setting-label">Autenticación en dos pasos</span>
+            <div class="toggle"></div>
+          </div>
+          <div class="setting-row">
+            <span class="setting-label">Notificaciones de acceso</span>
+            <div class="toggle"></div>
+          </div>
+        </div>
+        <div class="save-btn-bottom">
+          <button class="btn-green"><i class="fas fa-lock"></i> Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL OVERLAY -->
+    <div class="modal-overlay" id="overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title-row">
+            <i class="fas fa-lock" style="color:#5a7a4a;font-size:18px;"></i>
+            <span class="modal-title">Cambiar Contraseña</span>
+          </div>
+          <button class="modal-close" onclick="document.getElementById('overlay').style.display='none'">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Contraseña Actual</div>
+          <div class="input-wrap">
+            <input class="field-input" type="password" placeholder="Ingresa tu contraseña actual" id="inp1"/>
+            <button class="eye-btn" onclick="toggleVis('inp1',this)"><i class="fas fa-eye-slash"></i></button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Nueva Contraseña</div>
+          <div class="input-wrap">
+            <input class="field-input" type="password" placeholder="Ingresa tu nueva contraseña" id="inp2"/>
+            <button class="eye-btn" onclick="toggleVis('inp2',this)"><i class="fas fa-eye-slash"></i></button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Confirmar Nueva Contraseña</div>
+          <div class="input-wrap">
+            <input class="field-input" type="password" placeholder="Confirma tu nueva contraseña" id="inp3"/>
+            <button class="eye-btn" onclick="toggleVis('inp3',this)"><i class="fas fa-eye-slash"></i></button>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-cancel" onclick="document.getElementById('overlay').style.display='none'">
+            <i class="fas fa-xmark"></i> Cancelar
+          </button>
+          <button class="btn-save">
+            <i class="fas fa-lock"></i> Guardar Cambios
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleVis(id, btn) {
+  const inp = document.getElementById(id);
+  const icon = btn.querySelector('i');
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    icon.classList.replace('fa-eye-slash', 'fa-eye');
+  } else {
+    inp.type = 'password';
+    icon.classList.replace('fa-eye', 'fa-eye-slash');
+  }
+}
+</script>
+</body>
+</html>

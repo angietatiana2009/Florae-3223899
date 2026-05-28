@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Florae – Configuración</title>
+  <link rel="stylesheet" href="Configuracion.css" />
+</head>
+<body>
+
+<div class="panel">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-titulo">
+        <div class="sidebar-logo-icono">🌿</div>
+        Florae
+      </div>
+      <div class="sidebar-logo-subtitulo">Panel de administración</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- DASHBOARD -->
+      <div class="nav-item">
+        <img src="https://img.icons8.com/ios/50/ffffff/home--v1.png" alt="Dashboard" class="nav-item-icono">
+        Panel de administración
+      </div>
+
+      <!-- PLANTAS -->
+      <div class="nav-item">
+        <img src="https://img.icons8.com/ios/50/ffffff/leaf.png" alt="Plantas" class="nav-item-icono">
+        Plantas
+      </div>
+
+      <!-- PLAGAS -->
+      <div class="nav-item">
+        <img src="https://img.icons8.com/ios/50/ffffff/bug.png" alt="Plagas" class="nav-item-icono">
+        Plagas 
+      </div>
+      
+      <!-- USUARIOS - Enlace actualizado -->
+      <div class="nav-item">
+        <img src="https://img.icons8.com/material-outlined/50/ffffff/user-group-man-man.png" alt="Usuarios" class="nav-item-icono">
+        Usuarios
+      </div>
+
+      <!-- HISTORIAL - Enlace actualizado -->
+      <div class="nav-item">
+        <img src="https://img.icons8.com/material-outlined/50/ffffff/clock--v1.png" alt="Historial" class="nav-item-icono">
+        Historial de cambios
+      </div>
+
+      <!-- CONFIGURACIÓN -->
+      <div class="nav-item activo">
+        <!-- Icono en verde para el estado activo como en la imagen -->
+        <img src="https://img.icons8.com/ios/50/74a174/settings--v1.png" alt="Configuración" class="nav-item-icono">
+        Configuración
+      </div>
+    </nav>
+
+    <div class="sidebar-pie">
+      <div class="nav-item">
+        <img src="https://img.icons8.com/ios/50/ffffff/exit.png" alt="Cerrar sesión" class="nav-item-icono">
+        Cerrar sesión
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+
+    <!-- CABECERA -->
+    <header class="cabecera-principal">
+      <div>
+        <div class="cabecera-titulo">
+          <h1>Configuración</h1>
+          <span>🌿</span>
+        </div>
+        <div class="cabecera-subtitulo">Administra las preferencias del sistema</div>
+      </div>
+      <div class="cabecera-acciones">
+        <div class="icono-campana">🔔</div>
+        <div class="usuario-badge">
+          <div class="avatar-circulo">A</div>
+          Administrador
+          <span class="usuario-flecha">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CUERPO -->
+    <div class="cuerpo-configuracion">
+
+      <!-- TABS -->
+      <div class="panel-tabs">
+        <div class="tab-item activo">
+          <span class="tab-icono">⚙</span> General
+        </div>
+        <div class="tab-item">
+          <span class="tab-icono">🔔</span> Notificaciones
+        </div>
+        <div class="tab-item">
+          <span class="tab-icono">🔒</span> Seguridad
+        </div>
+        <div class="tab-item">
+          <span class="tab-icono">🎨</span> Apariencia
+        </div>
+        <div class="tab-item">
+          <span class="tab-icono">🌱</span> Regado
+        </div>
+        <div class="tab-item">
+          <span class="tab-icono">ℹ</span> Acerca de
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="area-formulario">
+        <div class="formulario-titulo">Configuración general</div>
+
+        <div class="campo-formulario">
+          <div class="campo-label">Nombre del sistema</div>
+          <br>
+          <div class="campo-descripcion">Nombre visible de tu sistema en el panel.</div>
+          <input class="campo-input" type="text" value="Florae" />
+        </div>
+
+        <div class="campo-formulario">
+          <div class="campo-label">Idioma</div>
+          <br>
+          <div class="campo-descripcion">Selecciona el idioma predeterminado del sistema.</div>
+          <select class="campo-select">
+            <option>Español</option>
+            <option>English</option>
+            <option>Português</option>
+          </select>
+        </div>
+
+        <div class="campo-formulario">
+          <div class="campo-label">Zona horaria</div>
+          <br>
+          <div class="campo-descripcion">Define la zona horaria para fechas y reportes.</div>
+          <select class="campo-select">
+            <option>(GMT-05:00) Bogotá, Colombia</option>
+            <option>(GMT-05:00) Medellín, Colombia</option>
+            <option>(GMT-05:00) Cali, Colombia</option>
+            <option>(GMT-05:00) Barranquilla, Colombia</option>
+            <option>(GMT-05:00) Cartagena, Colombia</option>
+          </select>
+        </div>
+
+        <div class="campo-formulario">
+          <div class="campo-label">Formato de fecha</div>
+          <br>
+          <div class="campo-descripcion">Elige el formato de fecha que deseas usar.</div>
+          <select class="campo-select">
+            <option>DD/MM/YYYY (16/05/2025)</option>
+            <option>DD de MMMM de YYYY (16 de mayo de 2025)</option>
+            <option>YYYY-MM-DD (2025-05-16)</option>
+          </select>
+        </div>
+
+        <div class="pie-formulario">
+          <button class="boton-guardar">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2 7l3.5 3.5L12 3"/>
+            </svg>
+            Guardar cambios
+          </button>
+        </div>
+
+       
+
+        </div>
