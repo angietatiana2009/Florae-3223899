@@ -1,51 +1,40 @@
 /* TARJETA: Ajustada para dar prioridad al icono */
-.card { 
-    background: white; 
-    padding: 30px; /* Más padding para airear */
-    border-radius: 20px; 
-    text-align: center; 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); 
-    display: flex; 
-    flex-direction: column;
-    align-items: center; /* Centrado horizontal */
-    min-height: 300px;  /* Altura mínima para que tengan espacio */
+:root { --sidebar-bg: #2d4a2d; --main-bg: #f5f7f2; --green-btn: #3d6b3d; --border: #dde8dd; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--main-bg); }
+.layout { display: flex; height: 100vh; }
+.sidebar { width: 220px; background: var(--sidebar-bg); color: white; padding: 20px; }
+.nav-item { display: block; padding: 10px; color: #c8dfc8; text-decoration: none; }
+.nav-item.active { background: #3d6b3d; color: white; border-radius: 8px; }
+.main { flex: 1; padding: 40px; display: flex; flex-direction: column; }
+.topbar { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.new-btn { background: var(--green-btn); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.card { background: white; border: 1px solid var(--border); padding: 20px; border-radius: 16px; text-align: center; }
+.card-icon-wrap { width: 70px; height: 70px; background: #f0f5f0; margin: 0 auto 15px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.card-icon-wrap svg { width: 40px; height: 40px; }
+.card-title { font-weight: bold; margin-bottom: 5px; }
+.card-subtitle { font-size: 12px; color: #8a9e8a; margin-bottom: 15px; }
+.card-actions { display: flex; justify-content: center; gap: 5px; }
+.action-tag { background: #e8f0e8; font-size: 11px; padding: 4px 10px; border-radius: 10px; border: 1px solid var(--border); }
+.action-icon-btn { border: 1px solid var(--border); background: white; cursor: pointer; border-radius: 6px; padding: 4px 8px; }
+.action-icon-btn.del:hover { background: #fde8e8; }
+
+
+.card-description{
+    background:#f5f7f2;
+    border:1px solid #e1e7dc;
+    border-radius:14px;
+    padding:14px 16px;
+    margin:16px 0 22px;
+    font-size:14px;
+    color:#5e665d;
+    line-height:1.6;
+    text-align:center;
+
+    min-height:120px;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
 }
 
-/* ICONOS: Aumentados a un tamaño imponente */
-.icon-container {
-    flex-grow: 1; /* Ocupa el espacio disponible central */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.icon { 
-    width: 160px;  /* Tamaño grande */
-    height: 160px; /* Tamaño grande */
-    object-fit: contain; 
-    filter: brightness(0); 
-    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
-}
-
-/* Efecto opcional: Que el icono crezca un poco al pasar el mouse */
-.card:hover .icon {
-    transform: scale(1.1);
-}
-
-/* TÍTULO Y FOOTER */
-.card h3 {
-    margin: 15px 0 5px 0;
-    font-size: 1.2em;
-}
-
-.card-footer { 
-    width: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-top: auto; /* Empuja el footer siempre al fondo */
-    border-top: 1px solid #eee; 
-    padding-top: 15px; 
-}
