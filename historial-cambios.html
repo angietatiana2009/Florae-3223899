@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="historial-cambios.css">
+    <title>HISTORIAL</title>
+</head>
+<body>
+     <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__brand-icon"><img class="icono" src="/imagenes/logo.png" alt="logo"></span>
+      <div>
+        <div class="sidebar__brand-name">Florae</div>
+        <div class="sidebar__brand-sub">Panel de administración</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="sidebar__link" href="dashboard.html"><span><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard</span></a>
+      <a class="sidebar__link" href="plantas.html"><span><img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas</span></a>
+      <a class="sidebar__link" href="/Tratamientoplaga.html"><span><img class="icono" src="/imagenes/control-de-plagas.png" alt="Tratamientos">Tratamientos</span></a>
+      <a class="sidebar__link" href="/Agregarnuevaplaga.html"><span><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</span></a>
+      <a class="sidebar__link" href="nuevo.usuario.html"><span><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios</span></a>
+      <a class="sidebar__link sidebar__link--active" href="historial-cambios.html"><span><img class="icono" src="/imagenes/clock.png" alt="Historial de cambios">Historial</span></a>
+      <a class="sidebar__link" href="/general.html"><span><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</span></a>
+    </nav>
+    <div class="sidebar__deco"></div>
+    <a class="sidebar__logout" href="/cerrar-sesion.html"><img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">Cerrar sesión</a>
+  </aside>
+ 
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Historial de cambios</h1>
+        <p>Completa la información de la planta</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="topbar__bell" aria-label="Notificaciones">🔔</button>
+        <div class="topbar__user">
+          <div class="topbar__avatar">A</div>
+          <span>Administrador</span>
+          <span class="topbar__chevron">▾</span>
+        </div>
+      </div>
+    </header>
+ 
+    <div class="content">
+      <div class="table-wrapper">
+ 
+        <!-- Buscador -->
+        <div class="search-bar">
+          <span class="search-bar__icon">🔍</span>
+          <input class="search-bar__input" type="text" placeholder="Buscar Acción..." />
+        </div>
+ 
+        <!-- Tabla -->
+        <table class="hist-table">
+          <thead>
+            <tr>
+              <th class="col-accion">Acción</th>
+              <th class="col-estado">Estado</th>
+              <th class="col-usuario">Realizado por</th>
+              <th class="col-fecha">Fecha y hora</th>
+              <th class="col-menu"></th>
+            </tr>
+          </thead>
+          <tbody>
+ 
+            <!-- Fila 1 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--green"></div>
+                  <span class="accion-icon icon--green">✏️</span>
+                  <div class="accion-text">
+                    <strong>Planta "orquidea cattleya" editada</strong>
+                    <span>Se actualizaron los detalles de la planta</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">18 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+            <!-- Fila 2 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--green"></div>
+                  <span class="accion-icon icon--green-mid">➕</span>
+                  <div class="accion-text">
+                    <strong>Nueva planta "Helecho boston" agregada</strong>
+                    <span>Se agrego una nueva planta al sistema</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">19 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+            <!-- Fila 3 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--yellow"></div>
+                  <span class="accion-icon icon--yellow">📋</span>
+                  <div class="accion-text">
+                    <strong>Ficha tecnica de "Aloe Vera" actualizada</strong>
+                    <span>se actualizaron los datos de la ficha tecnica</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--ficha">📋 Ficha tecnica</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">20 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+            <!-- Fila 4 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--purple"></div>
+                  <span class="accion-icon icon--purple">👤</span>
+                  <div class="accion-text">
+                    <strong>Usuario "JuanPerez1@gmail.com" suspendido</strong>
+                    <span>El usuario fue suspendido temporalmente</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--usuario">👤 Usuario</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">21 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+            <!-- Fila 5 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--red"></div>
+                  <span class="accion-icon icon--red">🐛</span>
+                  <div class="accion-text">
+                    <strong>Plaga "Pulgón" eliminada</strong>
+                    <span>La plaga fue eliminada del sistema</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--plaga">🐛 Plaga</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">22 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+            <!-- Fila 6 -->
+            <tr>
+              <td class="col-accion">
+                <div class="accion-cell">
+                  <div class="timeline-dot dot--red"></div>
+                  <span class="accion-icon icon--red-soft">🐛</span>
+                  <div class="accion-text">
+                    <strong>Planta "Rosa del desierto" eliminada</strong>
+                    <span>La planta fue eliminada del sistema</span>
+                  </div>
+                </div>
+              </td>
+              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-usuario">
+                <div class="usuario-cell">
+                  <div class="topbar__avatar">A</div>
+                  <span>Administrador</span>
+                </div>
+              </td>
+              <td class="col-fecha">
+                <span class="fecha-primary">23 Mayo 2025</span>
+                <span class="fecha-secondary">10:45 am</span>
+              </td>
+              <td class="col-menu"><button class="menu-btn">•••</button></td>
+            </tr>
+ 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
