@@ -1,9 +1,3 @@
-/* ============================================================
-   FLORAE – general.css
-   Estilos para la pantalla de Configuración General
-   ============================================================ */
-
-/* ── RESET & BASE ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
