@@ -1,575 +1,576 @@
-:root {
-  --bg-sidebar: #69845A;
-  --bg-main: #f8f9fa;
-  --bg-card: #ffffff;
-  --text-dark: #4a5343;
-  --text-muted: #8a9485;
-  --border-color: #e2e8f0;
-  --input-focus: #4a5343;
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-    .icono {
+
+:root {
+  --sidebar-bg: #69845a;
+  --sidebar-active: rgba(255, 255, 255, 0.15);
+  --sidebar-text: rgba(255, 255, 255, 0.7);
+  --sidebar-active-text: #ffffff;
+  --main-bg: #f5f7f2;
+  --card-bg: #ffffff;
+  --green-dark: #4a5343;
+  --green-mid: #4a7c4a;
+  --green-btn: #3d6b3d;
+  --green-light: #e8f0e8;
+  --accent: #5a8f5a;
+  --text-primary: #1a2e1a;
+  --text-secondary: #5a6e5a;
+  --text-muted: #8a9e8a;
+  --border: #dde8dd;
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+.icono {
   width: 14px;
   height: 14px;
-  margin-left: 6px;
   margin: 0 10px;
+  flex-shrink: 0;
+}
+.icono-sidebar {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
+html,
 body {
-  font-family: var(--font-family);
-  background-color: var(
-    --bg-main
-  ); /* Cambiado al fondo gris claro del dashboard */
-  color: var(--text-dark);
-  padding: 0; /* Eliminamos el padding de 20px para ocupar toda la pantalla */
-  display: flex;
-  height: 100vh; /* Fuerza al body a medir exactamente el alto de la pantalla */
-  width: 100vw; /* Fuerza al body a medir exactamente el ancho de la pantalla */
-  overflow: hidden; /* Evita barras de desplazamiento dobles en el body */
-}
-
-/* --- Layout Container --- */
-.dashboard-container {
-  display: flex;
+  height: 100%;
   width: 100%;
-  height: 100%; /* Ahora ocupa el 100% de la altura disponible */
-  background-color: var(--bg-main);
-  border-radius: 0; /* Eliminamos bordes redondeados exteriores para look full-screen */
+  font-family: var(--font-body);
+  background: var(--main-bg);
+  color: var(--text-primary);
   overflow: hidden;
-  box-shadow: none; /* Ya no es necesaria la sombra exterior */
 }
 
-/* --- Sidebar Navigation --- */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR  (igual a Tratamientoplaga)
+══════════════════════════════════════ */
 .sidebar {
-  width: 260px; /* Un poco más de ancho para equilibrar las letras más grandes */
-  background-color: var(--bg-sidebar);
-  color: #ffffff;
-  padding: 24px 0;
+  width: 220px;
+  min-width: 220px;
+  background: var(--sidebar-bg);
   display: flex;
   flex-direction: column;
+  padding: 0;
+  position: relative;
+  z-index: 10;
 }
 
-.logo-section {
+.sidebar-logo {
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  margin-bottom: 40px;
+  gap: 10px;
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 .logo-icon {
-  font-size: 36px; /* Letra de logo más grande */
-  margin-right: 12px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-
-.logo-section h2 {
-  font-size: 30px; /* Texto Florae más grande */
+/* 🌿 ICONO 1 – Logo Florae (ya tienes logo.png) */
+.logo-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.sidebar-logo span {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-.nav-menu {
+.sidebar-nav {
+  flex: 1;
+  padding: 18px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Más espacio entre opciones del menú */
+  gap: 4px;
 }
 
+/* Item normal */
 .nav-item {
   display: flex;
   align-items: center;
-  color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ) !important; /* Forzado con !important para asegurar visibilidad sobre el fondo verde */
-  text-decoration: none;
-  padding: 14px 24px; /* Más espaciado interno */
-  font-size: 20px; /* Texto del menú principal más grande */
-  transition: all 0.2s ease;
-}
-
-.nav-item i:first-child {
-  width: 28px;
-  font-size: 22px; /* Iconos del menú lateral más grandes */
-}
-
-.arrow-icon {
-  margin-left: auto;
-  font-size: 16px; /* Flecha de menú más grande */
-}
-
-.nav-group.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  margin: 0 12px;
-  padding: 6px 0;
-}
-
-.nav-group.active .nav-item {
-  padding: 8px 12px;
+  gap: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--sidebar-text);
+  font-size: 14px;
   font-weight: 500;
-  color: #fff !important; /* Asegura el color blanco en el texto activo */
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.nav-item.active {
+  background: var(--sidebar-active);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Bloque Plagas con submenú ── */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-group > .nav-item {
+  border-radius: 10px 10px 0 0;
+}
+.nav-group.open > .nav-item {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .submenu {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 36px;
-  gap: 12px; /* Más espacio entre submenús */
-  margin-top: 6px;
-  margin-bottom: 8px;
+  gap: 4px;
+  padding: 6px 0 8px 44px; /* sangría visual */
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 2px;
+}
+
+/* Línea vertical conectora */
+.submenu::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 6px;
+  bottom: 8px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
 }
 
 .submenu a {
-  color: rgba(
-    255,
-    255,
-    255,
-    0.7
-  ) !important; /* Asegura el color visible en submenús */
-  text-decoration: none;
-  font-size: 18px; /* Texto de submenú más grande */
-}
-
-.submenu a.active-sub {
-  color: #fff !important;
-  font-weight: bold;
   position: relative;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+.submenu a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* --- Main content layout --- */
-.main-content {
+/* punto indicador + color activo */
+.submenu a.active-sub {
+  color: #bbf246;
+  font-weight: 600;
+}
+.submenu a.active-sub::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  background: #bbf246;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(187, 242, 70, 0.55);
+}
+
+.sidebar-bottom {
+  padding: 16px 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ══════════════════════════════════════
+   MAIN
+══════════════════════════════════════ */
+.main {
   flex: 1;
-  padding: 35px; /* Más espacio alrededor del contenido general */
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  height: 100%;
-  overflow-y: auto; /* Permite scroll vertical interno si el formulario es muy largo */
+  overflow: hidden;
+  background: var(--main-bg);
 }
 
-/* --- Top Bar --- */
-.top-bar {
+/* ── TOPBAR ── */
+.topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 18px;
+  justify-content: space-between;
+  padding: 22px 32px 0;
+  flex-shrink: 0;
 }
-
-.page-title h1 {
-  font-size: 30px; /* Título "Agregar nueva plaga" más grande */
-  font-weight: 500;
-  color: #333;
+.topbar-left h1 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
-
-.breadcrumbs {
-  font-size: 16px; /* Ruta de navegación más grande */
+.topbar-left p {
+  font-size: 13px;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
-.breadcrumbs span {
-  color: var(--bg-sidebar);
-}
-
-.user-profile {
+.topbar-right {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   background: #fff;
-  padding: 10px 20px;
-  border-radius: 24px;
-  border: 1px solid var(--border-color);
-  font-size: 18px; /* Texto "Administrador" más grande */
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
+/* 🔔 ICONO 2 – Campana notificaciones (opcional imagen) */
+.icon-btn img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
 
-.avatar {
-  background-color: #7b8e72;
-  color: white;
-  width: 32px; /* Círculo del avatar más grande */
-  height: 32px;
+.admin-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px 5px 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.admin-avatar {
+  width: 26px;
+  height: 26px;
+  background: var(--green-mid);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 16px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-/* --- Main Form Card Layout --- */
+/* ── CONTENIDO SCROLLABLE ── */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px 32px;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 5px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: #c8d8c8;
+  border-radius: 3px;
+}
+
+/* ── FORM CARD ── */
 .form-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 35px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 2px 12px rgba(45, 74, 45, 0.05);
 }
 
+/* Fila superior: foto + campos */
 .form-row-top {
   display: flex;
-  gap: 35px;
-  margin-bottom: 30px;
+  gap: 28px;
+  margin-bottom: 24px;
+  align-items: flex-start;
 }
 
-/* Image Upload Area */
 .photo-upload-box {
-  width: 150px; /* Ajustado proporcionalmente */
-  height: 150px;
-  border: 2px dashed #cbd5e1;
-  border-radius: 12px;
+  width: 148px;
+  height: 148px;
+  flex-shrink: 0;
+  border: 2px dashed #c4d4be;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  background-color: #fafbfa;
+  background: #fafbfa;
+  gap: 6px;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.photo-upload-box:hover {
+  border-color: var(--accent);
+  background: #f3f8f2;
 }
 
-.upload-icon {
-  font-size: 36px; /* Icono de subir foto más grande */
+/* ☁️ ICONO 3 – Nube subir foto */
+.upload-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.55;
+}
+
+/* SVG fallback nube */
+.upload-icon-svg {
   color: var(--text-muted);
-  margin-bottom: 6px;
 }
-
 .upload-title {
-  font-size: 17px; /* Texto "Subir foto" más grande */
+  font-size: 14px;
   font-weight: 600;
   color: #444;
 }
-
 .upload-specs {
-  font-size: 14px; /* Texto de especificaciones más grande */
+  font-size: 12px;
   color: var(--text-muted);
-  margin-top: 2px;
+  line-height: 1.4;
 }
 
-/* Fields Styles */
 .input-group-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
-
 .form-group label {
-  font-size: 18px; /* Etiquetas de los campos más grandes */
+  font-size: 13.5px;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-dark, #4a5343);
 }
-
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 14px 18px; /* Más espacioso por dentro */
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  background-color: #fcfdfc;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
-  font-size: 18px; /* Texto dentro de las cajas de texto más grande */
-  color: #333;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  background: #fafcf9;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
   outline: none;
+  transition: border-color 0.18s;
 }
-
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #a0aec0;
+  color: #b0bfb0;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--input-focus);
+  border-color: var(--accent);
 }
-
-.full-width {
-  margin-bottom: 30px;
-}
-
 .form-group textarea {
-  height: 120px; /* Más alto para que quepa bien el texto grande */
+  height: 110px;
   resize: none;
 }
+.full-width {
+  margin-bottom: 22px;
+}
 
-/* Symptoms Section Elements */
+/* ── SECCIÓN SÍNTOMAS ── */
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
-
 .symptoms-title h3 {
-  font-size: 19px; /* Título "Síntomas" más grande */
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
-
 .symptoms-title p {
-  font-size: 16px; /* Subtítulo informativo más grande */
+  font-size: 13px;
   color: var(--text-muted);
+  margin-top: 2px;
 }
 
 .btn-secondary-sm {
-  background-color: #edf2eb;
-  border: 1px solid #cbd5e1;
-  color: #4a5343;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-size: 16px; /* Botón "+ Agregar síntoma" más grande */
-  font-weight: 500;
-  cursor: pointer;
-}
-
-/* Custom Checkbox Grid Layout */
-.symptoms-grid {
-  display: flex;
-  gap: 32px; /* CONSIDERABLE: Espaciado e intervalos amplios entre las tarjetas */
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-.symptom-card {
-  position: relative;
-  cursor: pointer;
-}
-
-.symptom-card input {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-  cursor: pointer;
-  transform: scale(1.2); /* Checkbox un poco más grande para que combine */
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column; /* Apila los elementos verticalmente */
-  align-items: center; /* Centra el icono y el texto horizontalmente */
-  justify-content: center; /* Centra el contenido verticalmente */
-  text-align: center; /* Centra las líneas de texto */
-  padding: 10px; /* Espacio interno para que el texto no toque los bordes */
-  box-sizing: border-box;
-}
-
-.symptom-card input:checked + .card-content {
-  border-color: var(--bg-sidebar);
-  background-color: #f4f7f3;
-}
-
-/* Informative bottom label */
-.info-notice {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px; /* Texto aclaratorio inferior más grande */
-  color: var(--text-muted);
-  margin-bottom: 35px;
-}
-
-/* Footer Control Elements */
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 16px;
-  border-top: 1px solid var(--border-color);
-  padding-top: 24px;
-  margin-top: 40px; /* BAJADOS: Espacio extra hacia arriba para empujar los botones un poco más abajo */
-}
-
-.btn-cancel {
-  background: none;
-  border: 1px solid #cbd5e1;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 17px; /* Texto "Cancelar" más grande */
-  color: #666;
-  cursor: pointer;
-}
-
-.btn-submit {
-  background-color: #4a5343;
-  border: none;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 17px; /* Texto "Guardar plaga" más grande */
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-submit:hover {
-  background-color: #3b4235;
-}
-/* ==========================================================
-   ESTILOS PARA LA LÍNEA CONECTORA DEL SUBMENÚ (FIGMA)
-   ========================================================== */
-
-/* 1. Contenedor del submenú con posición relativa y espacio izquierdo */
-.submenu {
-  position: relative;
-  padding-left: 45px; /* Empuja los textos a la derecha para dar espacio a la línea */
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Separación ordenada entre los enlaces */
-  margin-top: 10px;
-}
-
-/* 2. Creación de la línea vertical blanca/atenuada */
-.submenu::before {
-  content: "";
-  position: absolute;
-  left: 24px; /* Alineación perfecta debajo del icono de Plagas */
-  top: 0;
-  width: 2px;
-  height: 75%; /* Llega justo hasta la altura del último elemento */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.4
-  ); /* Línea blanca con transparencia sutil */
-}
-
-/* 3. Estilos base para los enlaces del submenú */
-.submenu a {
-  position: relative;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 15px;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-/* 4. Estilo exclusivo para la opción activa (Agregar nueva plaga) */
-.submenu a.active-sub {
-  color: #bbf246; /* Color verde lima brillante idéntico al de tu Figma */
+  gap: 6px;
+  background: var(--green-light);
+  border: 1px solid var(--border);
+  color: var(--green-dark);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 600;
-  opacity: 1;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-secondary-sm:hover {
+  background: #d4e8d4;
 }
 
-/* 5. Creación del puntito indicador verde lima en el elemento activo */
-.submenu a.active-sub::before {
-  content: "";
-  position: absolute;
-  left: -25px; /* Se posiciona exactamente encima de la línea vertical */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px; /* Tamaño perfecto del círculo indicador */
-  height: 8px;
-  background-color: #bbf246; /* Color verde lima coincidente */
-  border-radius: 50%; /* Lo hace completamente redondo */
-  box-shadow: 0 0 6px rgba(187, 242, 70, 0.6); /* Destello sutil para resaltar */
-}
-
-/* ==========================================================
-   ESTILOS SÓLO PARA LA DESCRIPCIÓN Y EL CENTRADO DEL ICONO
-   ========================================================== */
-
-/* 1. Hace que el contenido se organice como columna (icono arriba, texto abajo) */
-.card-content {
-  display: flex;
-  flex-direction: column; /* Apila el icono y el texto verticalmente */
-  align-items: center; /* Centra horizontalmente el contenido */
-  text-align: center; /* Centra el texto dentro del contenedor */
-  padding: 10px; /* Espacio interno para que el texto no toque los bordes */
-  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del cuadro */
-}
-
-/* 2. Separa el icono del texto de descripción que va abajo */
-.card-content .symptom-icon-img {
-  margin-bottom: 8px; /* Espacio exacto entre la imagen y el texto */
-}
-
-/* 3. Estilo para el texto descriptivo */
-.symptom-desc {
-  font-size: 11px; /* Tamaño de letra compacto para que quepa bien */
-  color: #475569; /* Color gris oscuro elegante */
-  margin: 0; /* Elimina márgenes por defecto del navegador */
-  line-height: 1.2; /* Ajuste de interlineado para textos de dos renglones */
-}
-
-/* ==========================================================
-   ALINEACIÓN Y DISEÑO DE LOS ICONOS DE SÍNTOMAS
-   ========================================================== */
-
-/* 1. Contenedor principal: los alinea en fila y les da separación */
+/* Grid de síntomas */
 .symptoms-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px; /* Espaciado uniforme entre los cuadros */
-  margin-top: 20px;
+  gap: 14px;
   margin-bottom: 20px;
 }
 
-/* 2. Estructura de la Tarjeta (Cuadro) */
-.symptom-card {
-  cursor: pointer;
-  display: inline-block;
-}
-
-/* 3. El contenedor interno: el secreto para que no se desorganicen */
-.symptom-card .card-content {
-  width: 120px; /* Ancho fijo para cada cuadro */
-  height: 130px; /* Altura fija para que todos midan lo mismo */
-  border: 1px solid #e2e8f0; /* Borde suave */
-  border-radius: 8px; /* Bordes redondeados como en la imagen */
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column; /* Apila el icono arriba y el texto abajo */
-  align-items: center; /* Centra horizontalmente todo el contenido */
-  justify-content: space-between; /* Distribuye el espacio eficientemente */
-  padding: 15px 10px; /* Espacio interno para que no toque los bordes */
-  box-sizing: border-box; /* Respeta las dimensiones fijas */
-  position: relative; /* Permite posicionar el checkbox interno */
-}
-
-/* 4. Ajustar el tamaño de las imágenes/iconos */
-.symptom-card .symptom-icon-img {
-  width: 45px; /* Tamaño ideal para que no se vea gigante ni diminuto */
-  height: 45px;
-  object-fit: contain; /* Evita que la imagen se deforme o estire */
-  margin-top: 5px;
-}
-
-/* 5. Organizar y centrar la descripción */
-.symptom-card .symptom-desc {
-  font-size: 11px; /* Tamaño de fuente compacto */
-  color: #334155; /* Color gris oscuro elegante */
-  text-align: center; /* Centra el texto */
-  margin: 0;
-  line-height: 1.3; /* Separa los renglones si el texto es largo */
-  font-weight: 500;
-}
-
-/* 6. Acomodar el Checkbox en la esquina superior derecha */
 .symptom-card {
   position: relative;
+  cursor: pointer;
 }
-
 .symptom-card input[type="checkbox"] {
   position: absolute;
   top: 8px;
   right: 8px;
-  margin: 0;
-  z-index: 10; /* Lo coloca por encima para que se pueda clickear */
-  cursor: pointer;
   width: 14px;
   height: 14px;
+  z-index: 10;
+  cursor: pointer;
+  margin: 0;
+}
+
+.card-content {
+  width: 118px;
+  height: 126px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 10px 12px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+}
+.symptom-card input:checked + .card-content {
+  border-color: var(--accent);
+  background: #f3f8f2;
+}
+
+.symptom-icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.symptom-desc {
+  font-size: 11px;
+  font-weight: 500;
+  color: #334155;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── AVISO INFO ── */
+.info-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+/* ℹ️ ICONO 4 – Información (ya tienes informacion.png) */
+.info-notice img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  opacity: 0.75;
+}
+
+/* ── ACCIONES FORMULARIO ── */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+}
+
+.btn-cancel {
+  background: none;
+  border: 1.5px solid var(--border);
+  padding: 10px 24px;
+  border-radius: 9px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+.btn-cancel:hover {
+  border-color: #aaa;
+  background: #f5f5f5;
+}
+
+.btn-submit {
+  background: var(--green-btn);
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 9px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+}
+.btn-submit:hover {
+  background: var(--green-mid);
+  box-shadow: 0 4px 14px rgba(74, 124, 74, 0.3);
 }

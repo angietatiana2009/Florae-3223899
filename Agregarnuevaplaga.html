@@ -1,162 +1,223 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florae - Agregar nueva plaga</title>
     <link rel="stylesheet" href="Agregarnuevaplaga.css">
+    <title>agregar nueva plaga</title>
 </head>
 <body>
-
-    <div class="dashboard-container">
-        
-        <aside class="sidebar">
-            <div class="logo-section">
-                 <img src="imagenes/logo.png" class="logo-img" alt="logo">
-                <h2>Florae</h2>
-            </div>
-            
-            <nav class="nav-menu">
-               <a href="/general.html" class="nav-item"><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Inicio</a>
-                
-                <div class="nav-group active">
-                   <a href="/Agregarnuevaplaga.html" class="nav-item"><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</a>
-                    <div class="submenu">
-                        <a href="/Listadodeplagas.html" class="active-sub">Listado de plagas</a>
-                        <a href="/Agregarnuevaplaga.html" class="active-sub">Agregar nueva plaga</a>
-                    </div>
-                </div>
-                 <a href="/Plantas.html" class="nav-item"><img class="icono" src="/imagenes/leaf .png" alt="Plantas"> Plantas</a>
-                 <a href="/Usuarios.html" class="nav-item"><img class="icono" src="/imagenes/user.png" alt="Usuario"> Usuario</a>
-                 <a href="/Historial.html" class="nav-item"><img class="icono" src="/imagenes/clock.png" alt="Historial"> Historial</a>
-                  <a href="/Configuracion.html" class="nav-item"><img class="icono" src="/imagenes/Vector.png" alt="Configuración"> Configuración</a>
-
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            
-            <header class="top-bar">
-                <div class="page-title">
-                    <h1>Agregar nueva plaga</h1>
-                    <div class="breadcrumbs">Plagas &gt; <span>Agregar nueva planta</span></div>
-                </div>
-                <div class="user-profile">
-                    <span class="avatar">A</span>
-                    <span class="user-name">Administrador</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </header>
-
-            <section class="form-card">
-                <form>
-                    
-                    <div class="form-row-top">
-                        <div class="photo-upload-box">
-                            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
-                            <p class="upload-title">Subir foto</p>
-                            <p class="upload-specs">JPG, PNG<br>Max 5MB</p>
-                        </div>
-
-                        <div class="input-group-container">
-                            <div class="form-group">
-                                <label for="scientific-name">Nombre científico</label>
-                                <input type="text" id="scientific-name" placeholder="Ejemplo: Spodoptera frugiperda">
-                            </div>
-                            <div class="form-group">
-                                <label for="common-name">Nombre Común</label>
-                                <input type="text" id="common-name" placeholder="Ejemplo: Gusano cogollero">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="description">Descripción de la plaga</label>
-                        <textarea id="description" placeholder="Describe brevemente esta plaga, sus características principales, ciclo de vida, y cualquier información relevante."></textarea>
-                    </div>
-
-                    <div class="section-header">
-                        <div class="symptoms-title">
-                            <h3>Síntomas</h3>
-                            <p>Selecciona los síntomas que provoca esta plaga en el cultivo</p>
-                        </div>
-                        <button type="button" class="btn-secondary-sm"><i class="fa-solid fa-plus"></i> Agregar síntoma</button>
-                    </div>
-
-                    <div class="symptoms-grid">
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/insecto 1.png" alt="Síntoma Hoja" class="symptom-icon-img">
-                                <p class="symptom-desc">Perforaciones en las hojas</p>
-                            </div>
-                        </label>
-                        
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/marchito 1.png" alt="Síntoma Regadera" class="symptom-icon-img">
-                                <p class="symptom-desc">Amarillamiento de las hojas</p>
-                            </div>
-                        </label>
-
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/naturaleza (1) 1.png" alt="Síntoma Sol" class="symptom-icon-img">
-                                <p class="symptom-desc">Marchitez de la planta</p>
-                            </div>
-                        </label>
-
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/parque 1.png" alt="Síntoma Crecimiento" class="symptom-icon-img">
-                                <p class="symptom-desc">Daño en tallos y brotes</p>
-                            </div>
-                        </label>
-
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/podrido 1.png" alt="Síntoma crecimiento" class="symptom-icon-img">
-                                <p class="symptom-desc">Daño en frutos</p>
-                            </div>
-                        </label>
-
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/raices 1.png" alt="Síntoma crecimiento" class="symptom-icon-img">
-                                <p class="symptom-desc">Daño en raíces</p>
-                            </div>
-                        </label>
-
-                        <label class="symptom-card">
-                            <input type="checkbox" name="symptoms">
-                            <div class="card-content">
-                                <img src="imagenes/telarana.png" alt="Síntoma crecimiento" class="symptom-icon-img">
-                                <p class="symptom-desc">Presencia de telarañas</p>
-                            </div>
-                        </label>
-                    </div>
-
-                    
-
-                    <div class="info-notice">
-                            <img src="imagenes/informacion.png" alt="Síntoma crecimiento" class="symptom-icon-img">
-                        <span>Puedes agregar síntomas personalizados que no estén en la lista</span>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-cancel">Cancelar</button>
-                        <button type="submit" class="btn-submit"><i class="fa-regular fa-floppy-disk"></i> Guardar plaga</button>
-                    </div>
-
-                </form>
-            </section>
-        </main>
+    <div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <img src="/imagenes/logo.png" alt="Florae">
+      </div>
+      <span>Florae</span>
     </div>
+ 
+    <nav class="sidebar-nav">
+ 
+      <a class="nav-item" href="/general.html">
+        <img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard
+      </a>
+ 
+      <a class="nav-item" href="/Plantas.html">
+        <img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas
+      </a>
+ 
+      <a class="nav-item" href="/Tratamientoplaga.html"><img class="icono" src="/imagenes/control-de-plagas.png" alt="Tratamientos">Tratamientos</a>
+ 
 
+      <div class="nav-group open">
+        <a class="nav-item active" href="/Agregarnuevaplaga.html"><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</a>
+        <div class="submenu">
+          <a href="/Listadodeplagas.html">Listado de plagas</a>
+          <a href="/Agregarnuevaplaga.html" class="active-sub">Agregar nueva plaga</a>
+        </div>
+      </div>
+ 
+      <a class="nav-item" href="/Usuarios.html"><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios </a>
+ 
+      <a class="nav-item" href="/historial-cambios.html"><img class="icono" src="/imagenes/clock.png" alt="Historial">Historial</a>
+ 
+      <a class="nav-item" href="/general.html"><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</a>
+ 
+    </nav>
+ 
+    <div class="sidebar-bottom">
+      <a class="nav-item" href="/cerrar-sesion.html">
+        <!-- ya tienes salida-de-incendios.png -->
+        <img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">Cerrar Sesión
+      </a>
+    </div>
+  </aside>
+ 
+  <!-- ══════════════ MAIN ══════════════ -->
+  <div class="main">
+ 
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1>Agregar nueva plaga</h1>
+        <p>Plagas &rsaquo; Agregar nueva plaga</p>
+      </div>
+      <div class="topbar-right">
+        <div class="icon-btn">
+          <!-- 🔔 ICONO 2 – Campana (SVG inline como fallback, o pon img) -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </div>
+        <div class="admin-pill">
+          <div class="admin-avatar">A</div>
+          Administrador
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- FORMULARIO -->
+    <div class="scroll-area">
+      <div class="form-card">
+        <form>
+ 
+          <!-- Fila superior: foto + nombre científico + nombre común -->
+          <div class="form-row-top">
+            <div class="photo-upload-box">
+              <!-- ☁️ ICONO 3 – Nube subir foto: cambia por <img class="upload-icon-img" src="/imagenes/AQUI-nube-subir.png"> -->
+              <svg class="upload-icon-svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 16 12 12 8 16"/>
+                <line x1="12" y1="12" x2="12" y2="21"/>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+              </svg>
+              <p class="upload-title">Subir foto</p>
+              <p class="upload-specs">JPG, PNG<br>Max 5MB</p>
+            </div>
+ 
+            <div class="input-group-container">
+              <div class="form-group">
+                <label for="scientific-name">Nombre científico</label>
+                <input type="text" id="scientific-name" placeholder="Ejemplo: Spodoptera frugiperda">
+              </div>
+              <div class="form-group">
+                <label for="common-name">Nombre Común</label>
+                <input type="text" id="common-name" placeholder="Ejemplo: Gusano cogollero">
+              </div>
+            </div>
+          </div>
+ 
+          <!-- Descripción -->
+          <div class="form-group full-width">
+            <label for="description">Descripción de la plaga</label>
+            <textarea id="description" placeholder="Describe brevemente esta plaga, sus características principales, ciclo de vida, y cualquier información relevante."></textarea>
+          </div>
+ 
+          <!-- Síntomas -->
+          <div class="section-header">
+            <div class="symptoms-title">
+              <h3>Síntomas</h3>
+              <p>Selecciona los síntomas que provoca esta plaga en el cultivo</p>
+            </div>
+            <button type="button" class="btn-secondary-sm">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Agregar síntoma
+            </button>
+          </div>
+ 
+          <div class="symptoms-grid">
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes insecto 1.png -->
+                <img src="imagenes/insecto 1.png" alt="Perforaciones" class="symptom-icon-img">
+                <p class="symptom-desc">Perforaciones en las hojas</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes marchito 1.png -->
+                <img src="imagenes/marchito 1.png" alt="Amarillamiento" class="symptom-icon-img">
+                <p class="symptom-desc">Amarillamiento de las hojas</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes naturaleza (1) 1.png -->
+                <img src="imagenes/naturaleza (1) 1.png" alt="Marchitez" class="symptom-icon-img">
+                <p class="symptom-desc">Marchitez de la planta</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes parque 1.png -->
+                <img src="imagenes/parque 1.png" alt="Tallos" class="symptom-icon-img">
+                <p class="symptom-desc">Daño en tallos y brotes</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes podrido 1.png -->
+                <img src="imagenes/podrido 1.png" alt="Frutos" class="symptom-icon-img">
+                <p class="symptom-desc">Daño en frutos</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes raices 1.png -->
+                <img src="imagenes/raices 1.png" alt="Raíces" class="symptom-icon-img">
+                <p class="symptom-desc">Daño en raíces</p>
+              </div>
+            </label>
+ 
+            <label class="symptom-card">
+              <input type="checkbox" name="symptoms">
+              <div class="card-content">
+                <!-- ya tienes telarana.png -->
+                <img src="imagenes/telarana.png" alt="Telarañas" class="symptom-icon-img">
+                <p class="symptom-desc">Presencia de telarañas</p>
+              </div>
+            </label>
+ 
+          </div>
+ 
+          <!-- Aviso -->
+          <div class="info-notice">
+            <!-- ℹ️ ICONO 4 – Información (ya tienes informacion.png) -->
+            <img src="imagenes/informacion.png" alt="Info">
+            <span>Puedes agregar síntomas personalizados que no estén en la lista</span>
+          </div>
+ 
+          <!-- Botones -->
+          <div class="form-actions">
+            <button type="button" class="btn-cancel">Cancelar</button>
+            <button type="submit" class="btn-submit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                <polyline points="17 21 17 13 7 13 7 21"/>
+                <polyline points="7 3 7 8 15 8"/>
+              </svg>
+              Guardar plaga
+            </button>
+          </div>
+ 
+        </form>
+      </div>
+    </div>
+ 
+  </div>
+</div>
 </body>
 </html>

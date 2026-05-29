@@ -1,10 +1,16 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --bg-cream: #f4eee1;
   --bg-content: #f9f6f0;
   --sidebar-green: #69845a;
-  --sidebar-active: rgba(255,255,255,0.13);
+  --sidebar-active: rgba(255, 255, 255, 0.13);
   --text-dark: #2d3a2a;
   --text-muted: #828a7e;
   --border: #e2decb;
@@ -13,299 +19,622 @@
   --green-accent: #83a27a;
   --time-color: #b5a48f;
 }
- 
-.icono { width: 14px; height: 14px; margin: 0 8px; }
-.icono-sidebar { width: 18px; height: 18px; margin: 0; flex-shrink: 0; }
- 
-html, body {
-  width: 100%; height: 100%;
-  font-family: 'Lato', sans-serif;
+
+.icono {
+  width: 14px;
+  height: 14px;
+  margin: 0 8px;
+}
+.icono-sidebar {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
   background: var(--white);
   color: var(--text-dark);
   overflow: hidden;
 }
- 
-.app-container { width: 100%; height: 100%; display: flex; flex-direction: column; }
- 
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ── SISTEMA GLOBAL DE ICONOS SVG ── */
 .ui-icon {
-  width: 20px; height: 20px;
-  fill: none; stroke: currentColor;
-  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-  display: inline-block; vertical-align: middle; flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
-.ui-icon-small { width: 14px; height: 14px; stroke-width: 2.2; }
- 
+.ui-icon-small {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+}
+
 /* ── HEADER ── */
 header {
   height: 70px;
   background: var(--bg-cream);
   border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 30px; flex-shrink: 0;
-}
- 
-.nav-left { display: flex; align-items: center; gap: 40px; }
- 
-.logo-container {
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-}
- 
-/* 🌿 ICONO 1: Logo principal del header */
-.logo-img { width: 36px; height: 36px; object-fit: contain; }
- 
-.nav-links { display: flex; gap: 30px; }
-.nav-links a {
-  text-decoration: none; color: var(--text-dark);
-  font-size: 15px; font-weight: 600; opacity: 0.8; transition: opacity .2s;
-}
-.nav-links a:hover { opacity: 1; }
- 
-.nav-right { display: flex; align-items: center; gap: 20px; }
- 
-.lang-dropdown { position: relative; display: inline-block; }
-.lang-selector {
-  font-size: 13.5px; color: var(--text-dark); font-weight: 600;
-  border: 1px solid #c9c2b1; padding: 6px 14px; border-radius: 20px;
-  background: transparent; cursor: pointer;
-  display: flex; align-items: center; gap: 6px; transition: all .2s;
-}
-.lang-selector:hover { background: rgba(255,255,255,.4); border-color: var(--text-dark); }
-.lang-dropdown-content {
-  display: none; position: absolute; right: 0; top: calc(100% + 6px);
-  background: var(--white); min-width: 140px;
-  border: 1px solid var(--border); border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(65,94,61,.08); z-index: 100; overflow: hidden;
-}
-.lang-dropdown-content a {
-  color: var(--text-dark); padding: 10px 16px;
-  text-decoration: none; display: block;
-  font-size: 13.5px; font-weight: 600; transition: background .2s, color .2s;
-}
-.lang-dropdown-content a:hover { background: var(--bg-content); color: var(--sidebar-green); }
-.lang-dropdown:hover .lang-dropdown-content { display: block; }
- 
-.user-avatar-nav {
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 2px solid #5b7553; background: #e2ebd9;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700; color: #415e3d;
-  overflow: hidden;
-}
- 
-/* 👤 ICONO 2: Avatar del usuario en el header (opcional, si tienes foto) */
-.user-avatar-nav img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
- 
-/* ── LAYOUT ── */
-.main-layout { display: flex; flex: 1; height: calc(100% - 70px); }
- 
-/* ── SIDEBAR ── */
-aside {
-  width: 260px; background: var(--sidebar-green);
-  padding: 30px 16px;
-  display: flex; flex-direction: column; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
   flex-shrink: 0;
 }
-.menu-items { display: flex; flex-direction: column; gap: 6px; }
- 
-.menu-item {
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 18px; border-radius: 30px;
-  color: rgba(255,255,255,.65); text-decoration: none;
-  transition: all .2s ease;
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
-.menu-item .ui-icon { color: rgba(255,255,255,.5); }
-.menu-item:hover { color: #fff; background: rgba(255,255,255,.05); }
-.menu-item:hover .ui-icon { color: rgba(255,255,255,.8); }
-.menu-item.active { background: var(--sidebar-active); color: #fff; }
-.menu-item.active .ui-icon { color: #fff; }
- 
+
+.logo-container {
+  /* aumentado para un logo más grande */
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌿 ICONO 1: Logo principal del header */
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.lang-selector {
+  font-size: 13.5px;
+  color: var(--text-dark);
+  font-weight: 600;
+  border: 1px solid #c9c2b1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.lang-selector:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: var(--text-dark);
+}
+.lang-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--white);
+  min-width: 140px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(65, 94, 61, 0.08);
+  z-index: 100;
+  overflow: hidden;
+}
+.lang-dropdown-content a {
+  color: var(--text-dark);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.lang-dropdown-content a:hover {
+  background: var(--bg-content);
+  color: var(--sidebar-green);
+}
+.lang-dropdown:hover .lang-dropdown-content {
+  display: block;
+}
+
+.user-avatar-nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #5b7553;
+  background: #e2ebd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #415e3d;
+  overflow: hidden;
+}
+
+/* 👤 ICONO 2: Avatar del usuario en el header (opcional, si tienes foto) */
+.user-avatar-nav img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ── LAYOUT ── */
+.main-layout {
+  display: flex;
+  flex: 1;
+  height: calc(100% - 70px);
+}
+
+/* ── SIDEBAR ── */
+aside {
+  width: 260px;
+  background: var(--sidebar-green);
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.menu-item .ui-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.menu-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.menu-item:hover .ui-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+.menu-item.active {
+  background: var(--sidebar-active);
+  color: #fff;
+}
+.menu-item.active .ui-icon {
+  color: #fff;
+}
+
 /* Ítems del sidebar con imagen en lugar de SVG */
 .menu-item-img {
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 18px; border-radius: 30px;
-  color: rgba(255,255,255,.65); text-decoration: none;
-  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
-.menu-item-img:hover { color: #fff; background: rgba(255,255,255,.05); }
-.menu-item-img.active { background: var(--sidebar-active); color: #fff; }
- 
-.menu-text { display: flex; flex-direction: column; }
-.menu-title { font-size: 14px; font-weight: 600; line-height: 1.3; }
-.menu-sub { font-size: 11.5px; opacity: .7; }
- 
+.menu-item-img:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.menu-item-img.active {
+  background: var(--sidebar-active);
+  color: #fff;
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+}
+.menu-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.menu-sub {
+  font-size: 11.5px;
+  opacity: 0.7;
+}
+
 .logout-box {
   padding: 12px 18px;
-  display: flex; align-items: center; gap: 10px;
-  color: rgba(255,255,255,.65); font-size: 14px; font-weight: 600;
-  cursor: pointer; border-radius: 30px; transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
   text-decoration: none;
 }
-.logout-box:hover { color: #fff; background: rgba(255,255,255,.05); }
- 
+.logout-box:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
 /* ── MAIN CONTENT ── */
 main {
-  flex: 1; background: var(--bg-content);
-  padding: 35px 50px; overflow-y: auto;
+  flex: 1;
+  background: var(--bg-content);
+  padding: 35px 50px;
+  overflow-y: auto;
 }
- 
+
 .page-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 26px;
 }
 .page-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px; font-weight: 700; color: var(--text-dark);
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
 }
-.page-header p { font-size: 13.5px; color: var(--text-muted); margin-top: 3px; }
- 
+.page-header p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
 .btn-edit-profile {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--white); border: 1.5px solid #b2c0ae;
-  padding: 9px 20px; border-radius: 20px;
-  font-size: 13.5px; font-weight: 700; color: #415e3d;
-  cursor: pointer; transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1.5px solid #b2c0ae;
+  padding: 9px 20px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #415e3d;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.btn-edit-profile:hover { background: #f3f6f2; border-color: #415e3d; }
- 
+.btn-edit-profile:hover {
+  background: #f3f6f2;
+  border-color: #415e3d;
+}
+
 /* ── PROFILE CARD ── */
 .profile-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: 18px; padding: 28px 32px;
-  display: flex; align-items: center; gap: 28px;
-  margin-bottom: 20px; position: relative; overflow: hidden;
-}
- 
-.profile-card-deco {
-  position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
-  opacity: 0.18; pointer-events: none;
-}
- 
-/* 🌿 ICONO 3: Decoración de hoja/rama en la tarjeta de perfil */
-.profile-card-deco img { width: 120px; height: auto; }
- 
-.profile-avatar-wrap { position: relative; flex-shrink: 0; }
-.profile-avatar {
-  width: 90px; height: 90px; border-radius: 50%;
-  background: #dce8d5; border: 2px solid #c0d4b8;
-  display: flex; align-items: center; justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 20px;
+  position: relative;
   overflow: hidden;
 }
- 
+
+.profile-card-deco {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* 🌿 ICONO 3: Decoración de hoja/rama en la tarjeta de perfil */
+.profile-card-deco img {
+  width: 120px;
+  height: auto;
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #dce8d5;
+  border: 2px solid #c0d4b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 /* 👤 ICONO 4: Avatar principal del perfil (silueta de persona) */
-.profile-avatar img.avatar-person { width: 56px; height: 56px; object-fit: contain; opacity: .55; }
- 
+.profile-avatar img.avatar-person {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  opacity: 0.55;
+}
+
 .camera-btn {
-  position: absolute; bottom: 2px; right: 2px;
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--white); border: 1.5px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: background .2s;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.camera-btn:hover { background: var(--bg-cream); }
- 
+.camera-btn:hover {
+  background: var(--bg-cream);
+}
+
 /* 📷 ICONO 5: Cámara (botón de cambiar foto de perfil) */
-.camera-btn img { width: 13px; height: 13px; object-fit: contain; }
- 
-.profile-info { flex: 1; }
-.profile-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; font-weight: 700; color: var(--text-dark);
+.camera-btn img {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
 }
-.profile-email { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+.profile-info {
+  flex: 1;
+}
+.profile-name {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.profile-email {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
 .badge-active {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 12px; background: #eaf4eb;
-  border: 1px solid #b8d9bc; border-radius: 999px;
-  padding: 5px 14px; font-size: 13px; font-weight: 700; color: #3a7d44;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  background: #eaf4eb;
+  border: 1px solid #b8d9bc;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a7d44;
 }
 .badge-active-dot {
-  width: 7px; height: 7px; background: #5aad63; border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  background: #5aad63;
+  border-radius: 50%;
 }
- 
+
 /* ── INFO PERSONAL ── */
 .info-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: 18px; padding: 24px 32px; margin-bottom: 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px 32px;
+  margin-bottom: 20px;
 }
 .info-card-title {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 16px; font-weight: 700; color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
   margin-bottom: 18px;
 }
- 
+
 /* 👤 ICONO 6: Icono de "Información Personal" (título de sección) */
-.info-card-title img { width: 22px; height: 22px; object-fit: contain; }
- 
+.info-card-title img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .info-row {
-  display: flex; align-items: center;
-  padding: 13px 0; border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
 }
-.info-row:last-child { border-bottom: none; }
- 
+.info-row:last-child {
+  border-bottom: none;
+}
+
 .info-row-icon {
-  width: 32px; display: flex; align-items: center; justify-content: center;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- 
+
 /* ✉️ ICONO 7: Icono correo electrónico en la fila de info */
 /* 🌐 ICONO 8: Icono idioma/globo en la fila de info */
-.info-row-icon img { width: 18px; height: 18px; object-fit: contain; opacity: .65; }
- 
-.info-row-label { width: 160px; font-size: 14px; color: var(--text-muted); font-weight: 600; }
-.info-row-value {
-  flex: 1; background: #f7f4ee; border: 1px solid var(--border);
-  border-radius: 10px; padding: 9px 16px;
-  font-size: 14px; color: var(--text-dark); font-weight: 600;
+.info-row-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.65;
 }
-.info-row-arrow { margin-left: 14px; color: var(--text-muted); font-size: 16px; cursor: pointer; }
- 
+
+.info-row-label {
+  width: 160px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.info-row-value {
+  flex: 1;
+  background: #f7f4ee;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.info-row-arrow {
+  margin-left: 14px;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* ── ACTIVIDAD RECIENTE ── */
 .activity-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: 18px; padding: 24px 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px 32px;
 }
 .activity-header {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 18px;
 }
 .activity-title {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 16px; font-weight: 700; color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
 }
- 
+
 /* 🌱 ICONO 9: Icono de "Actividad Reciente" (plantita) */
-.activity-title img { width: 22px; height: 22px; object-fit: contain; }
- 
+.activity-title img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .activity-ver-todo {
-  font-size: 13.5px; font-weight: 700; color: #c4962a;
-  text-decoration: none; display: flex; align-items: center; gap: 4px;
-  transition: opacity .2s;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #c4962a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s;
 }
-.activity-ver-todo:hover { opacity: .7; }
- 
-.activity-list { display: flex; flex-direction: column; gap: 0; }
+.activity-ver-todo:hover {
+  opacity: 0.7;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 .activity-item {
-  display: flex; align-items: center; gap: 16px;
-  padding: 12px 0; border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
 }
-.activity-item:last-child { border-bottom: none; }
- 
+.activity-item:last-child {
+  border-bottom: none;
+}
+
 .activity-thumb {
-  width: 42px; height: 42px; border-radius: 12px;
-  background: #f0ede4; overflow: hidden; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f0ede4;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- 
+
 /* 🌸 ICONO 10: Foto/miniatura de "Agregaste una nueva planta" */
 /* 💧 ICONO 11: Icono de "Tareas de Cuidado Diario" */
 /* 📷 ICONO 12: Icono de "Comunidad y progreso" */
-.activity-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-.activity-thumb img.icon-only { width: 22px; height: 22px; object-fit: contain; opacity: .6; }
- 
-.activity-label { flex: 1; font-size: 14px; font-weight: 600; color: var(--text-dark); }
+.activity-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.activity-thumb img.icon-only {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.activity-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
 .activity-time {
-  background: #f0ede4; border-radius: 999px;
-  padding: 4px 12px; font-size: 12px; color: var(--time-color); font-weight: 600;
+  background: #f0ede4;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--time-color);
+  font-weight: 600;
 }
