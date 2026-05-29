@@ -9,7 +9,7 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--main-bg
 .topbar { display: flex; justify-content: space-between; margin-bottom: 20px; }
 .new-btn { background: var(--green-btn); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
 .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.card { background: white; border: 1px solid var(--border); padding: 20px; border-radius: 16px; text-align: center; }
+.card { background:#dcefd7;; border: 1px solid var(--border); padding: 20px; border-radius: 16px; text-align: center; }
 .card-icon-wrap { width: 70px; height: 70px; background: #f0f5f0; margin: 0 auto 15px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 .card-icon-wrap svg { width: 40px; height: 40px; }
 .card-title { font-weight: bold; margin-bottom: 5px; }
