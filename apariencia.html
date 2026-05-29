@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florae – Panel de administración</title>
+<link rel="stylesheet" href="apariencia.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__brand-icon">🌿</span>
+      <div>
+        <div class="sidebar__brand-name">Florae</div>
+        <div class="sidebar__brand-sub">Panel de administración</div>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">⌂</span> Dashboard
+      </a>
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">🌱</span> Plantas
+      </a>
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">🐛</span> Plagas / Enfermedades
+      </a>
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">🪴</span> Sustratos
+      </a>
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">👤</span> Usuarios
+      </a>
+      <a class="sidebar__link" href="#">
+        <span class="sidebar__link-icon">🕘</span> Historial de cambios
+      </a>
+      <a class="sidebar__link sidebar__link--active" href="#">
+        <span class="sidebar__link-icon">⚙</span> Configuración
+      </a>
+    </nav>
+
+    <div class="sidebar__deco"></div>
+
+    <a class="sidebar__logout" href="#">
+      <span>↪</span> Cerrar sesión
+    </a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Configuración <span class="leaf">🌿</span></h1>
+        <p>Administra las preferencias del sistema</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="topbar__bell" aria-label="Notificaciones">🔔</button>
+        <div class="topbar__user">
+          <div class="topbar__avatar">A</div>
+          <span>Administrador</span>
+          <span class="topbar__chevron">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- SETTINGS TABS -->
+      <aside class="settings-nav">
+        <a class="settings-nav__item" href="#">
+          <span>⚙</span> General
+        </a>
+        <a class="settings-nav__item" href="#">
+          <span>🔔</span> Notificaciones
+        </a>
+        <a class="settings-nav__item" href="#">
+          <span>🛡</span> Seguridad
+        </a>
+        <a class="settings-nav__item settings-nav__item--active" href="#">
+          <span>🎨</span> Apariencia
+        </a>
+        <a class="settings-nav__item" href="#">
+          <span>☁</span> Respaldo
+        </a>
+        <a class="settings-nav__item" href="#">
+          <span>ℹ</span> Acerca de
+        </a>
+      </aside>
+
+      <!-- PANEL -->
+      <section class="panel">
+        <h2 class="panel__heading">Apariencia</h2>
+        <p class="panel__sub">Personaliza la apariencia del panel de administración.</p>
+
+        <div class="panel__divider"></div>
+
+        <!-- TEMA -->
+        <div class="panel__row">
+          <div class="panel__label">
+            <strong>Tema</strong>
+            <span>Selecciona el tema del panel.</span>
+          </div>
+          <div class="panel__control toggle-group">
+            <button class="toggle-btn toggle-btn--active">
+              <span>☀</span> Claro
+            </button>
+            <button class="toggle-btn">
+              <span>🌙</span> Oscuro
+            </button>
+          </div>
+        </div>
+
+        <div class="panel__divider"></div>
+
+        <!-- COLOR PRIMARIO -->
+        <div class="panel__row">
+          <div class="panel__label">
+            <strong>Color primario</strong>
+            <span>Elige el color principal del sistema.</span>
+          </div>
+          <div class="panel__control color-swatches">
+            <button class="swatch swatch--selected" style="--c:#3a7d44;" aria-label="Verde bosque">
+              <span class="swatch__check">✓</span>
+            </button>
+            <button class="swatch" style="--c:#2a6072;" aria-label="Azul pizarra"></button>
+            <button class="swatch" style="--c:#3b6fd4;" aria-label="Azul royal"></button>
+            <button class="swatch" style="--c:#7b5ea7;" aria-label="Lavanda"></button>
+            <button class="swatch" style="--c:#9b4e6a;" aria-label="Rosa oscuro"></button>
+            <button class="swatch" style="--c:#a05c2c;" aria-label="Tierra"></button>
+            <button class="swatch" style="--c:#c4a882;" aria-label="Arena"></button>
+          </div>
+        </div>
+
+        <div class="panel__divider"></div>
+
+        <!-- COLOR SECUNDARIO -->
+        <div class="panel__row">
+          <div class="panel__label">
+            <strong>Color secundario</strong>
+            <span>Elige el color secundario del sistema.</span>
+          </div>
+          <div class="panel__control color-swatches">
+            <button class="swatch swatch--selected" style="--c:#7db87f;" aria-label="Verde claro">
+              <span class="swatch__check">✓</span>
+            </button>
+            <button class="swatch" style="--c:#7abdd4;" aria-label="Celeste"></button>
+            <button class="swatch" style="--c:#6db0d9;" aria-label="Azul cielo"></button>
+            <button class="swatch" style="--c:#4fada8;" aria-label="Teal"></button>
+            <button class="swatch" style="--c:#82c07a;" aria-label="Lima"></button>
+            <button class="swatch" style="--c:#d4b84a;" aria-label="Oro"></button>
+            <button class="swatch" style="--c:#e8d4a0;" aria-label="Crema"></button>
+          </div>
+        </div>
+
+        <div class="panel__divider"></div>
+
+        <!-- MODO DE DISEÑO -->
+        <div class="panel__row">
+          <div class="panel__label">
+            <strong>Modo de diseño</strong>
+            <span>Elige cómo se muestra el contenido en el panel.</span>
+          </div>
+          <div class="panel__control toggle-group">
+            <button class="toggle-btn toggle-btn--active">
+              <span>⊞</span> Cómodo
+            </button>
+            <button class="toggle-btn">
+              <span>▦</span> Compacto
+            </button>
+          </div>
+        </div>
+
+        <!-- SAVE -->
+        <div class="panel__footer">
+          <button class="btn-save">
+            🔒 Guardar cambios
+          </button>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>

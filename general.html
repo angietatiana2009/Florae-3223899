@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florae – General</title>
+  <link rel="stylesheet" href="general.css" />
+ </head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__brand-icon"><img class="icono" src="/imagenes/logo.png" alt="logo"></span>
+      <div>
+        <div class="sidebar__brand-name">Florae</div>
+        <div class="sidebar__brand-sub">Panel de administración</div>
+      </div> 
+    </div>
+    <nav class="sidebar__nav">
+      <a class="sidebar__link" href="dashboard.html"><span><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard</span></a>
+      <a class="sidebar__link" href="plantas.html"><span><img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas</span></a>
+      <a class="sidebar__link" href="plagas-enfermedades.html"><span><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</span></a>
+      <a class="sidebar__link" href="usuarios.html"><span><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios</span></a>
+      <a class="sidebar__link" href="historial-cambios.html"><span><img class="icono" src="/imagenes/clock.png" alt="Historial de cambios">Historial de cambios</span></a>
+      <a class="sidebar__link sidebar__link--active" href="#"><span><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</span></a>
+
+    </nav>
+    <div class="sidebar__deco"></div>
+    <a class="sidebar__logout" href="#">↪ Cerrar sesión</a>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Configuración <span class="leaf"></span></h1>
+        <p>Administra las preferencias del sistema</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="topbar__bell" aria-label="Notificaciones"></button>
+        <div class="topbar__user">
+          <div class="topbar__avatar">A</div>
+          <span>Administrador</span>
+          <span class="topbar__chevron">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <aside class="settings-nav">
+        <a class="settings-nav__item settings-nav__item--active" href="general.html"><span><img class="icono" src="/imagenes/General.png" alt="General">General</span></a>
+        <a class="settings-nav__item" href="notificaciones.html"><span><img class="icono" src="/imagenes/Notificaciones.png" alt="Notificaciones">Notificaciones</span></a>
+        <a class="settings-nav__item" href="seguridad.html"><span><img class="icono" src="/imagenes/Seguridad.png" alt="Seguridad">Seguridad</span></a>
+        <a class="settings-nav__item" href="respaldo.html"><span><img class="icono" src="/imagenes/Respaldo.png" alt="Respaldo">Respaldo</span></a>
+        <a class="settings-nav__item" href="acerca-de.html"><span><img class="icono" src="/imagenes/AcercaDe.png" alt="Acerca de">Acerca de</span></a>
+      </aside>
+
+      <section class="panel">
+        <h2 class="panel__heading">Configuración general</h2>
+
+        <div class="panel__divider"></div>
+
+        <!-- Nombre del sistema -->
+        <div class="panel__row" style="margin-bottom:20px;">
+          <div class="panel__label">
+            <strong>Nombre del sistema</strong>
+            <span>Nombre visible de tu sistema en el panel.</span>
+          </div>
+          <div class="panel__control">
+            <input class="form-input" type="text" value="Florae" style="min-width:220px;" />
+          </div>
+        </div>
+
+        <!-- Idioma -->
+        <div class="panel__row" style="margin-bottom:20px;">
+          <div class="panel__label">
+            <strong>Idioma</strong>
+            <span>Selecciona el idioma predeterminado del sistema.</span>
+          </div>
+          <div class="panel__control">
+            <select class="form-select">
+              <option selected>Español</option>
+              <option>English</option>
+              <option>Português</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Zona horaria -->
+        <div class="panel__row" style="margin-bottom:20px;">
+          <div class="panel__label">
+            <strong>Zona horaria</strong>
+            <span>Define la zona horaria para fechas y reportes.</span>
+          </div>
+          <div class="panel__control">
+            <select class="form-select" style="min-width:280px;">
+              <option selected>(GMT-05:00) Lima, Bogotá, Quito</option>
+              <option>(GMT-05:00) Eastern Time (EE.UU.)</option>
+              <option>(GMT-06:00) Mexico City</option>
+              <option>(GMT+00:00) UTC</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Formato de fecha -->
+        <div class="panel__row" style="margin-bottom:20px;">
+          <div class="panel__label">
+            <strong>Formato de fecha</strong>
+            <span>Elige el formato de fecha que deseas usar.</span>
+          </div>
+          <div class="panel__control">
+            <select class="form-select" style="min-width:260px;">
+              <option selected>DD MMM YYYY (18 May 2025)</option>
+              <option>DD/MM/YYYY</option>
+              <option>MM/DD/YYYY</option>
+              <option>YYYY-MM-DD</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel__footer">
+          <button class="btn-save">🔒 Guardar cambios</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
