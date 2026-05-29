@@ -1,113 +1,225 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Perfil - Jardín</title>
-  <!-- Fuentes de Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Archivo de estilos separado -->
   <link rel="stylesheet" href="mi perfil.css">
+  <title>perfil</title>
 </head>
 <body>
-
-<div id="toast">✅ Cambios guardados</div>
-
-<nav>
-  <div class="nav-logo" onclick="goPage('perfil','nav-perfil-link')" title="Inicio">🌱</div>
-  <div class="nav-links">
-    <a id="nav-jardin-link" onclick="goPage('jardin','nav-jardin-link')">Mi jardín</a>
-    <a id="nav-explorar-link" onclick="goPage('explorar','nav-explorar-link')" class="active">Explorar</a>
-    <a id="nav-calendario-link" onclick="goPage('calendario','nav-calendario-link')">Calendario</a>
-  </div>
-  <div class="nav-right">
-    <span class="nav-lang" id="nav-lang" onclick="cycleLang()">Español</span>
-    <div class="nav-avatar" id="nav-avatar" onclick="goSide('perfil')" title="Mi perfil">MG</div>
-  </div>
-</nav>
-
-<div class="layout">
-  <aside>
-    <div class="s-item active" id="side-perfil" onclick="goSide('perfil')">
-      <div class="s-icon">👤</div>
-      <div><div class="s-label">Mi Perfil</div><div class="s-sub">Información personal</div></div>
-    </div>
-    <div class="s-item" id="side-config" onclick="goSide('config')">
-      <div class="s-icon">⚙️</div>
-      <div><div class="s-label">Configuración</div><div class="s-sub">Preferencias</div></div>
-    </div>
-    <div class="s-item" id="side-notif" onclick="goSide('notif')">
-      <div class="s-icon">🔔</div>
-      <div><div class="s-label">Notificaciones</div><div class="s-sub">Gestiona alertas</div></div>
-    </div>
-    <div class="s-item" id="side-privacidad" onclick="goSide('privacidad')">
-      <div class="s-icon">🛡️</div>
-      <div><div class="s-label">Privacidad</div><div class="s-sub">Tu información</div></div>
-    </div>
-    <div class="s-spacer"></div>
-    <div class="s-logout" onclick="logout()">
-      <span style="font-size:16px">🚪</span>
-      <span>Cerrar Sesión</span>
-    </div>
-  </aside>
-
-  <main id="main-content">
-
-    <!-- ────────── MI PERFIL ────────── -->
-    <div class="page show" id="page-perfil">
-      <div class="ph">
-        <div><div class="pt">Mi perfil</div><div class="ps">Edita tu información personal</div></div>
-        <button class="btn-primary" onclick="openModal()">✏️ Editar Perfil</button>
+  <div class="app-container">
+ 
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="nav-left">
+      <div class="logo-container">
+        <!-- 🌿 ICONO 1: Logo — pon tu archivo en src -->
+        <img class="logo-img" src="/imagenes/logo.png" alt="Logo Jardín">
       </div>
-
-      <div class="pcard">
-        <div class="pcard-deco">🌿🌿</div>
-        <div class="av-wrap" onclick="document.getElementById('file-input-main').click()" title="Cambiar foto">
-          <div class="av-circle" id="main-avatar">MG</div>
-          <div class="av-overlay">📷</div>
-          <div class="av-cam">📷</div>
+      <nav class="nav-links">
+        <a href="#">Mi jardín</a>
+        <a href="#">Explorar</a>
+        <a href="#">Calendario</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang-dropdown">
+        <button class="lang-selector">
+          <span>Español</span>
+          <svg class="ui-icon ui-icon-small" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown-content">
+          <a href="#">English</a>
+          <a href="#">Português</a>
+          <a href="#">Français</a>
+          <a href="#">Italiano</a>
         </div>
+      </div>
+      <!-- El avatar usa SVG genérico; si tienes foto pon <img> dentro -->
+      <div class="user-avatar-nav">MG</div>
+    </div>
+  </header>
+ 
+  <div class="main-layout">
+ 
+    <!-- ── SIDEBAR ── -->
+    <aside>
+      <div class="menu-items">
+ 
+        <!-- Ítem activo: Mi Perfil -->
+        <a href="#" class="menu-item-img active">
+          <!-- 👤 ICONO S1: Mi Perfil (sidebar) -->
+          <img class="icono-sidebar" src="/imagenes/AQUI-perfil.png" alt="Mi Perfil">
+          <div class="menu-text">
+            <span class="menu-title">Mi Perfil</span>
+            <span class="menu-sub">Información Personal</span>
+          </div>
+        </a>
+ 
+        <a href="/general.html" class="menu-item-img">
+          <!-- ⚙️ ICONO S2: Configuración (sidebar) -->
+          <img class="icono-sidebar" src="/imagenes/AQUI-configuracion.png" alt="Configuración">
+          <div class="menu-text">
+            <span class="menu-title">Configuración</span>
+            <span class="menu-sub">Preferencias de la cuenta</span>
+          </div>
+        </a>
+ 
+        <a href="#" class="menu-item-img">
+          <!-- 🔔 ICONO S3: Notificaciones (sidebar) -->
+          <img class="icono-sidebar" src="/imagenes/AQUI-notificaciones.png" alt="Notificaciones">
+          <div class="menu-text">
+            <span class="menu-title">Notificaciones</span>
+            <span class="menu-sub">Gestiona tus notificaciones</span>
+          </div>
+        </a>
+ 
+        <a href="#" class="menu-item-img">
+          <!-- 🔒 ICONO S4: Privacidad (sidebar) -->
+          <img class="icono-sidebar" src="/imagenes/AQUI-privacidad.png" alt="Privacidad y seguridad">
+          <div class="menu-text">
+            <span class="menu-title">Privacidad y seguridad</span>
+            <span class="menu-sub">Controla tu privacidad</span>
+          </div>
+        </a>
+ 
+      </div>
+ 
+      <a href="/CerrarSesion.html" class="logout-box">
+        <!-- 🚪 ICONO S5: Cerrar Sesión (sidebar) — ya tienes esta imagen -->
+        <img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">
+        Cerrar Sesión
+      </a>
+    </aside>
+ 
+    <!-- ── MAIN ── -->
+    <main>
+      <div class="page-header">
         <div>
-          <div class="profile-name" id="display-name">Maria Garcia</div>
-          <div class="profile-email" id="display-email">MariaGarcia123@gmail.com</div>
-          <div style="font-size:12px;color:var(--tl);margin-top:2px" id="display-bio">Amante de las plantas 🌿 | Bogotá</div>
-          <div class="badge-active"><div class="bdot"></div>Miembro Activo</div>
+          <h1>Mi perfil</h1>
+          <p>Edita tu información personal y como te presentas en la comunidad</p>
+        </div>
+        <button class="btn-edit-profile">
+          <svg class="ui-icon ui-icon-small" viewBox="0 0 24 24">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+          Editar Perfil
+        </button>
+      </div>
+ 
+      <!-- Tarjeta principal de perfil -->
+      <div class="profile-card">
+        <!-- Decoración hoja derecha -->
+        <div class="profile-card-deco">
+          <!-- 🌿 ICONO 3: Rama decorativa fondo tarjeta -->
+          <img src="/imagenes/AQUI-rama-deco.png" alt="">
+        </div>
+ 
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar">
+            <!-- 👤 ICONO 4: Silueta persona del avatar -->
+            <img class="avatar-person" src="/imagenes/AQUI-avatar-persona.png" alt="Avatar">
+          </div>
+          <button class="camera-btn">
+            <!-- 📷 ICONO 5: Cámara para cambiar foto -->
+            <img src="/imagenes/AQUI-camara.png" alt="Cambiar foto">
+          </button>
+        </div>
+ 
+        <div class="profile-info">
+          <div class="profile-name">Maria Garcia</div>
+          <div class="profile-email">MariaGarcia123@gmail.com</div>
+          <div class="badge-active">
+            <div class="badge-active-dot"></div>
+            Miembro Activo
+          </div>
         </div>
       </div>
-
-      <div class="scard">
-        <div class="stitle">👤 Información Personal</div>
-        <div class="irow" onclick="openModal()">
-          <span style="font-size:16px">🧑</span>
-          <span class="ilabel">Nombre completo</span>
-          <div class="ival" id="info-name">Maria Garcia</div>
-          <span class="ichev">›</span>
+ 
+      <!-- Información Personal -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <!-- 👤 ICONO 6: Icono título "Información Personal" -->
+          <img src="/imagenes/AQUI-info-personal.png" alt="Información Personal">
+          Información Personal
         </div>
-        <div class="irow" onclick="openModal()">
-          <span style="font-size:16px">✉️</span>
-          <span class="ilabel">Correo electrónico</span>
-          <div class="ival" id="info-email">MariaGarcia123@gmail.com</div>
-          <span class="ichev">›</span>
+ 
+        <div class="info-row">
+          <div class="info-row-icon">
+            <!-- 👤 ICONO 6b: Icono persona en fila Nombre -->
+            <img src="/imagenes/AQUI-icono-nombre.png" alt="Nombre">
+          </div>
+          <div class="info-row-label">Nombre Completo</div>
+          <div class="info-row-value">Maria Garcia</div>
+          <span class="info-row-arrow">›</span>
         </div>
-        <div class="irow" onclick="openModal()">
-          <span style="font-size:16px">📱</span>
-          <span class="ilabel">Teléfono</span>
-          <div class="ival" id="info-phone">+57 300 000 0000</div>
-          <span class="ichev">›</span>
+ 
+        <div class="info-row">
+          <div class="info-row-icon">
+            <!-- ✉️ ICONO 7: Icono correo en fila Correo -->
+            <img src="/imagenes/AQUI-correo.png" alt="Correo">
+          </div>
+          <div class="info-row-label">Correo electronico</div>
+          <div class="info-row-value">MariaGarcia123@gmail.com</div>
+          <span class="info-row-arrow">›</span>
         </div>
-        <div class="irow" onclick="openModal()">
-          <span style="font-size:16px">📍</span>
-          <span class="ilabel">Ubicación</span>
-          <div class="ival" id="info-location">Bogotá, Colombia</div>
-          <span class="ichev">›</span>
+ 
+        <div class="info-row">
+          <div class="info-row-icon">
+            <!-- 🌐 ICONO 8: Icono globo en fila Idioma -->
+            <img src="/imagenes/AQUI-idioma.png" alt="Idioma">
+          </div>
+          <div class="info-row-label">Idioma</div>
+          <div class="info-row-value">Español</div>
+          <span class="info-row-arrow">›</span>
         </div>
       </div>
-    </div>
-
-  </main>
+ 
+      <!-- Actividad Reciente -->
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-title">
+            <!-- 🌱 ICONO 9: Icono plantita "Actividad Reciente" -->
+            <img src="/imagenes/AQUI-planta-actividad.png" alt="Actividad">
+            Actividad Reciente
+          </div>
+          <a href="#" class="activity-ver-todo">Ver todo ⟶</a>
+        </div>
+ 
+        <div class="activity-list">
+ 
+          <div class="activity-item">
+            <div class="activity-thumb">
+              <!-- 🌸 ICONO 10: Miniatura foto de la planta agregada -->
+              <img src="/imagenes/AQUI-miniatura-planta.png" alt="Planta">
+            </div>
+            <span class="activity-label">Agregaste una nueva planta</span>
+            <span class="activity-time">Hace 2 días</span>
+          </div>
+ 
+          <div class="activity-item">
+            <div class="activity-thumb">
+              <!-- 💧 ICONO 11: Icono gota "Tareas de Cuidado Diario" -->
+              <img class="icon-only" src="/imagenes/AQUI-cuidado-diario.png" alt="Cuidado">
+            </div>
+            <span class="activity-label">Tareas de Cuidado Diario</span>
+            <span class="activity-time">Hace 5 días</span>
+          </div>
+ 
+          <div class="activity-item">
+            <div class="activity-thumb">
+              <!-- 📷 ICONO 12: Icono cámara "Comunidad y progreso" -->
+              <img class="icon-only" src="/imagenes/AQUI-comunidad.png" alt="Comunidad">
+            </div>
+            <span class="activity-label">Comunidad y progreso</span>
+            <span class="activity-time">Hace 1 semana</span>
+          </div>
+ 
+        </div>
+      </div>
+    </main>
+  </div>
 </div>
-
-<!-- Archivo JavaScript separado -->
-<script src="script.js"></script>
 </body>
 </html>

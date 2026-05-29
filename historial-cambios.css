@@ -1,5 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 :root {
   --green-dark:   #69845A;
   --green-mid:    #3a7d44;
@@ -20,14 +20,19 @@
   --sidebar-w:    220px;
   --topbar-h:     72px;
 }
-
+ 
+/* Icono generico */
 .icono { width: 14px; height: 14px; margin: 0 10px; }
-
+/* Iconos mas grandes para acciones de tabla */
+.icono-accion { width: 18px; height: 18px; }
+/* Iconos en badges */
+.icono-badge { width: 13px; height: 13px; }
+ 
 html, body { height: 100%; font-family: var(--font-body); background: var(--green-bg); color: var(--text-primary); font-size: 14px; line-height: 1.5; }
 body { display: flex; min-height: 100vh; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: inherit; }
-
+ 
 /* ── SIDEBAR ─────────────────────────────────────────────── */
 .sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh; background: var(--green-dark); display: flex; flex-direction: column; padding: 24px 0 20px; overflow: hidden; z-index: 100; }
 .sidebar__deco { position: absolute; bottom: 60px; left: -30px; width: 140px; height: 140px; background: radial-gradient(circle at 60% 60%, rgba(255,255,255,.06), transparent 70%); border-radius: 50%; pointer-events: none; }
@@ -41,31 +46,31 @@ button { cursor: pointer; font-family: inherit; }
 .sidebar__link--active { background: rgba(255,255,255,.15); color: #fff; font-weight: 500; }
 .sidebar__logout { display: flex; align-items: center; gap: 8px; padding: 10px 24px; color: rgba(255,255,255,.5); font-size: 13px; border-top: 1px solid rgba(255,255,255,.1); margin-top: auto; transition: color .18s; }
 .sidebar__logout:hover { color: rgba(255,255,255,.85); }
-
+ 
 /* ── MAIN / TOPBAR ───────────────────────────────────────── */
 .main { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
 .topbar { height: var(--topbar-h); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
 .topbar__title h1 { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); }
 .topbar__title p { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
 .topbar__actions { display: flex; align-items: center; gap: 14px; }
-.topbar__bell { background: none; border: none; font-size: 17px; color: var(--text-muted); padding: 6px; border-radius: 50%; transition: background .15s; }
+.topbar__bell { background: none; border: none; font-size: 17px; color: var(--text-muted); padding: 6px; border-radius: 50%; transition: background .15s; display: flex; align-items: center; justify-content: center; }
 .topbar__bell:hover { background: var(--green-pale); }
 .topbar__user { display: flex; align-items: center; gap: 8px; background: var(--green-pale); border: 1px solid var(--border); border-radius: 40px; padding: 5px 12px 5px 5px; font-size: 13px; color: var(--text-primary); font-weight: 500; cursor: pointer; }
 .topbar__avatar { width: 28px; height: 28px; background: var(--green-mid); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
 .topbar__chevron { font-size: 10px; color: var(--text-muted); }
-
+ 
 /* ── CONTENT ─────────────────────────────────────────────── */
 .content { flex: 1; padding: 28px 32px; }
-
+ 
 /* ── TABLE WRAPPER ───────────────────────────────────────── */
 .table-wrapper { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px 24px; box-shadow: var(--shadow-sm); }
-
+ 
 /* ── SEARCH BAR ──────────────────────────────────────────── */
 .search-bar { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 14px; width: 240px; margin-bottom: 20px; background: var(--white); }
-.search-bar__icon { font-size: 13px; color: var(--text-muted); }
+.search-bar__icon { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; }
 .search-bar__input { border: none; outline: none; font-family: var(--font-body); font-size: 13px; color: var(--text-primary); width: 100%; background: transparent; }
 .search-bar__input::placeholder { color: var(--text-muted); }
-
+ 
 /* ── HIST TABLE ──────────────────────────────────────────── */
 .hist-table { width: 100%; border-collapse: collapse; }
 .hist-table thead th { font-size: 12px; font-weight: 600; color: var(--text-muted); text-align: left; padding: 0 12px 10px; border-bottom: 1px solid var(--border); }
@@ -73,18 +78,16 @@ button { cursor: pointer; font-family: inherit; }
 .hist-table tbody tr:last-child { border-bottom: none; }
 .hist-table tbody tr:hover { background: var(--green-bg); }
 .hist-table td { padding: 14px 12px; vertical-align: middle; }
-
+ 
 /* ── COLUMN WIDTHS ───────────────────────────────────────── */
 .col-accion  { width: 42%; }
 .col-estado  { width: 16%; }
 .col-usuario { width: 20%; }
 .col-fecha   { width: 16%; }
 .col-menu    { width: 6%; text-align: right; }
-
+ 
 /* ── ACCION CELL ─────────────────────────────────────────── */
 .accion-cell { display: flex; align-items: center; gap: 12px; position: relative; }
-
-/* Timeline vertical line via pseudo on tbody */
 .hist-table tbody tr:not(:last-child) .accion-cell::before {
   content: '';
   position: absolute;
@@ -95,13 +98,13 @@ button { cursor: pointer; font-family: inherit; }
   background: var(--border);
   z-index: 0;
 }
-
+ 
 .timeline-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; z-index: 1; }
 .dot--green  { background: #5c9e64; }
 .dot--yellow { background: #c9a84c; }
 .dot--purple { background: #8b7eb8; }
 .dot--red    { background: #d97b6c; }
-
+ 
 .accion-icon { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
 .icon--green      { background: #e2f0e4; }
 .icon--green-mid  { background: #d4ecd6; }
@@ -109,27 +112,27 @@ button { cursor: pointer; font-family: inherit; }
 .icon--purple     { background: #ece9f5; }
 .icon--red        { background: #fbe8e5; }
 .icon--red-soft   { background: #fbe8e5; }
-
+ 
 .accion-text { display: flex; flex-direction: column; gap: 2px; }
 .accion-text strong { font-size: 13px; font-weight: 600; color: var(--text-primary); }
 .accion-text span   { font-size: 12px; color: var(--text-muted); }
-
+ 
 /* ── BADGES ──────────────────────────────────────────────── */
 .badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap; }
 .badge--planta  { background: #e8f5ea; color: #3a7d44; border: 1px solid #c3dfc6; }
 .badge--ficha   { background: #f5edda; color: #a07c2a; border: 1px solid #e2d0a0; }
 .badge--usuario { background: #ece9f5; color: #6b5faa; border: 1px solid #cfc8e8; }
 .badge--plaga   { background: #fbe8e5; color: #b85a4a; border: 1px solid #f0c4bc; }
-
+ 
 /* ── USUARIO CELL ────────────────────────────────────────── */
 .usuario-cell { display: flex; align-items: center; gap: 8px; }
 .usuario-cell span { font-size: 13px; color: var(--text-primary); font-weight: 500; }
-
+ 
 /* ── FECHA ───────────────────────────────────────────────── */
 .col-fecha { display: flex; flex-direction: column; gap: 2px; padding-top: 14px; }
 .fecha-primary   { font-size: 13px; color: var(--text-primary); font-weight: 500; }
 .fecha-secondary { font-size: 12px; color: var(--text-muted); }
-
+ 
 /* ── MENU BUTTON ─────────────────────────────────────────── */
 .menu-btn { background: none; border: none; font-size: 15px; color: var(--text-muted); padding: 4px 8px; border-radius: var(--radius-sm); transition: background .15s, color .15s; letter-spacing: 1px; }
 .menu-btn:hover { background: var(--green-pale); color: var(--text-primary); }

@@ -7,25 +7,43 @@
     <title>HISTORIAL</title>
 </head>
 <body>
-     <aside class="sidebar">
+<aside class="sidebar">
     <div class="sidebar__brand">
-      <span class="sidebar__brand-icon"><img class="icono" src="/imagenes/logo.png" alt="logo"></span>
+      <span class="sidebar__brand-icon">
+        <img class="icono" src="/imagenes/logo.png" alt="logo">
+      </span>
       <div>
         <div class="sidebar__brand-name">Florae</div>
         <div class="sidebar__brand-sub">Panel de administración</div>
       </div>
     </div>
     <nav class="sidebar__nav">
-      <a class="sidebar__link" href="dashboard.html"><span><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard</span></a>
-      <a class="sidebar__link" href="plantas.html"><span><img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas</span></a>
-      <a class="sidebar__link" href="/Tratamientoplaga.html"><span><img class="icono" src="/imagenes/control-de-plagas.png" alt="Tratamientos">Tratamientos</span></a>
-      <a class="sidebar__link" href="/Agregarnuevaplaga.html"><span><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</span></a>
-      <a class="sidebar__link" href="usuarios.html"><span><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios</span></a>
-      <a class="sidebar__link sidebar__link--active" href="historial-cambios.html"><span><img class="icono" src="/imagenes/clock.png" alt="Historial de cambios">Historial</span></a>
-      <a class="sidebar__link" href="/general.html"><span><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</span></a>
+      <a class="sidebar__link" href="dashboard.html">
+        <span><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard</span>
+      </a>
+      <a class="sidebar__link" href="plantas.html">
+        <span><img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas</span>
+      </a>
+      <a class="sidebar__link" href="/Tratamientoplaga.html">
+        <span><img class="icono" src="/imagenes/control-de-plagas.png" alt="Tratamientos">Tratamientos</span>
+      </a>
+      <a class="sidebar__link" href="/Agregarnuevaplaga.html">
+        <span><img class="icono" src="/imagenes/cockroach.png" alt="Plagas">Plagas</span>
+      </a>
+      <a class="sidebar__link" href="usuarios.html">
+        <span><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios</span>
+      </a>
+      <a class="sidebar__link sidebar__link--active" href="historial-cambios.html">
+        <span><img class="icono" src="/imagenes/clock.png" alt="Historial de cambios">Historial</span>
+      </a>
+      <a class="sidebar__link" href="/general.html">
+        <span><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</span>
+      </a>
     </nav>
     <div class="sidebar__deco"></div>
-    <a class="sidebar__logout" href="/cerrar-sesion.html"><img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">Cerrar sesión</a>
+    <a class="sidebar__logout" href="/cerrar-sesion.html">
+      <img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">Cerrar sesión
+    </a>
   </aside>
  
   <main class="main">
@@ -35,7 +53,12 @@
         <p>Completa la información de la planta</p>
       </div>
       <div class="topbar__actions">
-        <button class="topbar__bell" aria-label="Notificaciones">🔔</button>
+ 
+        <!-- 🔔 ICONO 1: Campana de notificaciones -->
+        <button class="topbar__bell" aria-label="Notificaciones">
+          <img class="icono" src="/imagenes/AQUI-campana.png" alt="Notificaciones">
+        </button>
+ 
         <div class="topbar__user">
           <div class="topbar__avatar">A</div>
           <span>Administrador</span>
@@ -49,7 +72,12 @@
  
         <!-- Buscador -->
         <div class="search-bar">
-          <span class="search-bar__icon">🔍</span>
+ 
+          <!-- 🔍 ICONO 2: Lupa del buscador -->
+          <span class="search-bar__icon">
+            <img class="icono" src="/imagenes/AQUI-lupa.png" alt="Buscar">
+          </span>
+ 
           <input class="search-bar__input" type="text" placeholder="Buscar Acción..." />
         </div>
  
@@ -71,14 +99,25 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--green"></div>
-                  <span class="accion-icon icon--green">✏️</span>
+ 
+                  <!-- ✏️ ICONO 3: Acción editar -->
+                  <span class="accion-icon icon--green">
+                    <img class="icono-accion" src="/imagenes/AQUI-editar.png" alt="Editar">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Planta "orquidea cattleya" editada</strong>
                     <span>Se actualizaron los detalles de la planta</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-estado">
+                <span class="badge badge--planta">
+ 
+                  <!-- 🌿 ICONO 4: Badge Planta (se repite en filas 2 y 6) -->
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-planta.png" alt="Planta"> Planta
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
@@ -97,14 +136,23 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--green"></div>
-                  <span class="accion-icon icon--green-mid">➕</span>
+ 
+                  <!-- ➕ ICONO 5: Acción agregar -->
+                  <span class="accion-icon icon--green-mid">
+                    <img class="icono-accion" src="/imagenes/AQUI-agregar.png" alt="Agregar">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Nueva planta "Helecho boston" agregada</strong>
                     <span>Se agrego una nueva planta al sistema</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-estado">
+                <span class="badge badge--planta">
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-planta.png" alt="Planta"> Planta
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
@@ -123,14 +171,25 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--yellow"></div>
-                  <span class="accion-icon icon--yellow">📋</span>
+ 
+                  <!-- 📋 ICONO 6: Acción ficha técnica -->
+                  <span class="accion-icon icon--yellow">
+                    <img class="icono-accion" src="/imagenes/AQUI-ficha.png" alt="Ficha técnica">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Ficha tecnica de "Aloe Vera" actualizada</strong>
                     <span>se actualizaron los datos de la ficha tecnica</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--ficha">📋 Ficha tecnica</span></td>
+              <td class="col-estado">
+                <span class="badge badge--ficha">
+ 
+                  <!-- 📋 ICONO 7: Badge Ficha técnica -->
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-ficha.png" alt="Ficha técnica"> Ficha tecnica
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
@@ -149,14 +208,25 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--purple"></div>
-                  <span class="accion-icon icon--purple">👤</span>
+ 
+                  <!-- 👤 ICONO 8: Acción usuario -->
+                  <span class="accion-icon icon--purple">
+                    <img class="icono-accion" src="/imagenes/AQUI-usuario-accion.png" alt="Usuario">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Usuario "JuanPerez1@gmail.com" suspendido</strong>
                     <span>El usuario fue suspendido temporalmente</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--usuario">👤 Usuario</span></td>
+              <td class="col-estado">
+                <span class="badge badge--usuario">
+ 
+                  <!-- 👤 ICONO 9: Badge Usuario -->
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-usuario.png" alt="Usuario"> Usuario
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
@@ -175,14 +245,25 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--red"></div>
-                  <span class="accion-icon icon--red">🐛</span>
+ 
+                  <!-- 🐛 ICONO 10: Acción plaga eliminada -->
+                  <span class="accion-icon icon--red">
+                    <img class="icono-accion" src="/imagenes/AQUI-plaga-accion.png" alt="Plaga">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Plaga "Pulgón" eliminada</strong>
                     <span>La plaga fue eliminada del sistema</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--plaga">🐛 Plaga</span></td>
+              <td class="col-estado">
+                <span class="badge badge--plaga">
+ 
+                  <!-- 🐛 ICONO 11: Badge Plaga -->
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-plaga.png" alt="Plaga"> Plaga
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
@@ -201,14 +282,23 @@
               <td class="col-accion">
                 <div class="accion-cell">
                   <div class="timeline-dot dot--red"></div>
-                  <span class="accion-icon icon--red-soft">🐛</span>
+ 
+                  <!-- 🗑️ ICONO 12: Acción planta eliminada -->
+                  <span class="accion-icon icon--red-soft">
+                    <img class="icono-accion" src="/imagenes/AQUI-eliminar.png" alt="Eliminar">
+                  </span>
+ 
                   <div class="accion-text">
                     <strong>Planta "Rosa del desierto" eliminada</strong>
                     <span>La planta fue eliminada del sistema</span>
                   </div>
                 </div>
               </td>
-              <td class="col-estado"><span class="badge badge--planta">🌿 Planta</span></td>
+              <td class="col-estado">
+                <span class="badge badge--planta">
+                  <img class="icono-badge" src="/imagenes/AQUI-badge-planta.png" alt="Planta"> Planta
+                </span>
+              </td>
               <td class="col-usuario">
                 <div class="usuario-cell">
                   <div class="topbar__avatar">A</div>
