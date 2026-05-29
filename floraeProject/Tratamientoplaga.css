@@ -4,12 +4,12 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--main-bg
 .layout { display: flex; height: 100vh; }
 .sidebar { width: 220px; background: var(--sidebar-bg); color: white; padding: 20px; }
 .nav-item { display: block; padding: 10px; color: #c8dfc8; text-decoration: none; }
-.nav-item.active { background: #3d6b3d; color: white; border-radius: 8px; }
+.nav-item.active { background: #69845A; color: white; border-radius: 8px; }
 .main { flex: 1; padding: 40px; display: flex; flex-direction: column; }
 .topbar { display: flex; justify-content: space-between; margin-bottom: 20px; }
 .new-btn { background: var(--green-btn); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
 .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.card { background:#dcefd7;; border: 1px solid var(--border); padding: 20px; border-radius: 16px; text-align: center; }
+.card { background:#d3ebcd;; border: 1px solid var(--border); padding: 20px; border-radius: 16px; text-align: center; }
 .card-icon-wrap { width: 70px; height: 70px; background: #f0f5f0; margin: 0 auto 15px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 .card-icon-wrap svg { width: 40px; height: 40px; }
 .card-title { font-weight: bold; margin-bottom: 5px; }
@@ -35,4 +35,77 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--main-bg
     align-items:center;
     justify-content:center;
 }
+/* Estilos para el contenedor del grupo de menú */
+.nav-group {
+    display: flex;
+    flex-direction: column;
+}
 
+/* Estilos para el submenú */
+.submenu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px; /* Indentación para que se vea como submenú */
+    margin-top: 5px;
+}
+
+/* Estilos para los links del submenú */
+.submenu a {
+    color: #ffffff; /* Ajusta el color según tu diseño */
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 5px 0;
+    opacity: 0.8;
+}
+
+.submenu a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+/* Contenedor del submenú con la línea */
+.menu-line {
+    position: relative;
+    padding-left: 25px; /* Espacio para la línea */
+}
+
+.menu-line::before {
+    content: '';
+    position: absolute;
+    left: 15px; /* Posición horizontal de la línea */
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background-color: #69845A; /* Color de la línea */
+    border-radius: 2px;
+}
+
+/* Contenedor del link con el punto */
+.submenu-item {
+    position: relative;
+}
+
+/* El círculo verde */
+.active-dot::before {
+    content: '';
+    position: absolute;
+    left: -15px; /* Alineado con la línea */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #A9DF65; /* Color del círculo */
+    border-radius: 50%;
+    box-shadow: 0 0 5px #A9DF65;
+}
+
+/* Ajuste del texto */
+.submenu a {
+    display: block;
+    padding: 8px 0;
+    color: #c8dfc8;
+}
+
+.active-dot a {
+    color: #ffffff;
+    font-weight: 500;
+}
