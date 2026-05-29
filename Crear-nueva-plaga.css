@@ -1,14 +1,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-main: #fcfbfa;      
-  --sidebar-green: #52684f; 
+  --sidebar-green: #69845a; 
   --text-dark: #2c382b;
   --text-muted: #737d71;
   --border-card: #e2e4dc;
   --white: #ffffff;
   --btn-green: #485c45;
   --btn-green-hover: #3b4d39;
+}
+.icono {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  margin: 0 10px;
 }
 
 html, body {
