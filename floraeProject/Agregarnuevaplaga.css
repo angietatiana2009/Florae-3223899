@@ -463,16 +463,14 @@ Aquí tienes únicamente el bloque de código CSS que necesitas añadir o actual
    ESTILOS SÓLO PARA LA DESCRIPCIÓN Y EL CENTRADO DEL ICONO
    ========================================================== */
 
-/* 1. Hace que el contenido se organice como columna (icono arriba, texto abajo) */
 .card-content {
     display: flex;
-    flex-direction: column; /* Apila el icono y el texto verticalmente */
-    align-items: center;    /* Centra horizontalmente el contenido */
-    text-align: center;     /* Centra el texto dentro del contenedor */
-    padding: 10px;          /* Espacio interno para que el texto no toque los bordes */
-    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del cuadro */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
-
 /* 2. Separa el icono del texto de descripción que va abajo */
 .card-content .symptom-icon-img {
     margin-bottom: 8px;      /* Espacio exacto entre la imagen y el texto */
@@ -553,4 +551,78 @@ Aquí tienes únicamente el bloque de código CSS que necesitas añadir o actual
     cursor: pointer;
     width: 14px;
     height: 14px;
+}
+
+/* 1. Contenedor para alinear el título H3 y la Nota en horizontal */
+.title-with-alert {
+    display: flex;
+    align-items: center;
+    gap: 20px;            /* Espacio de separación entre el título y la nota azul */
+    position: relative;
+}
+
+/* 2. Caja de alerta azul estilo nota flotante */
+.info-alert-box {
+    background-color: #eef4fa; /* Color azul claro de fondo */
+    border-radius: 12px;       /* Bordes redondeados y suaves */
+    padding: 10px 16px;        /* Espaciado interno para que el texto respire */
+    max-width: 320px;          /* Limita el ancho para que no se extienda demasiado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy suave para dar volumen */
+}
+
+/* 3. Estilos para el texto dentro de la nota */
+.info-alert-box p {
+    font-size: 0.85rem;        /* Tamaño de letra compacto y legible */
+    line-height: 1.4;          /* Altura de línea cómoda para leer */
+    color: #7f8c9d;            /* Color gris azulado para el texto */
+    margin: 0;                 /* Elimina márgenes por defecto del párrafo */
+}
+
+/* 4. Resaltado para la palabra "Nota:" */
+.info-alert-box p strong {
+    color: #5c6b73;            /* Un tono de gris más oscuro para que resalte */
+    font-weight: 700;
+}
+
+/* Estilo para el cuadro de advertencia */
+
+
+.alert-limit-floating {
+    display: none; 
+    position: relative; /* Cambiamos a relativo para moverlo suavemente */
+    left: 450px; /* AJUSTA ESTE VALOR: Aumenta este número si quieres que se mueva más a la derecha */
+    top: -50px;  /* Ajusta esto para subirlo o bajarlo sobre los iconos */
+    width: 280px; 
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: #1565c0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Esto hace que la cuadrícula permita posicionar cosas dentro */
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    position: relative; /* ¡Esto es clave! */
+}
+
+/* Este es el estilo del mensaje para que quede flotando sobre el último */
+.alert-limit-floating {
+    display: none; 
+    position: absolute;
+    bottom: 120px; /* Ajusta esto para subirlo o bajarlo */
+    right: 0;      /* Esto lo pega a la derecha */
+    width: 250px;
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: #1565c0;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
