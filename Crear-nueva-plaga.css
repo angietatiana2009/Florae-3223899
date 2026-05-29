@@ -1,36 +1,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --sidebar-green: #69845a; 
-  --text-dark: #2c382b;
-  --text-muted: #737d71;
-  --border-card: #e2e4dc;
-  --white: #ffffff;
-  --btn-green: #485c45;
+  /* Variables del sidebar (general.css) */
+  --green-dark:   #69845A;
+  --green-mid:    #3a7d44;
+  --green-light:  #5c9e64;
+  --green-pale:   #e8f0e9;
+  --green-bg:     #F8F6F1;
+  --text-primary: #1e2b1f;
+  --border:       #d8e6d9;
+  --white:        #ffffff;
+  --radius-sm:    8px;
+  --radius-md:    14px;
+  --shadow-sm:    0 1px 4px rgba(44,90,53,.08);
+  --shadow-md:    0 4px 20px rgba(44,90,53,.10);
+  --shadow-lg:    0 8px 40px rgba(44,90,53,.15);
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+  --sidebar-w:    220px;
+
+  /* Variables originales del contenido */
+  --text-dark:    #2c382b;
+  --text-muted:   #737d71;
+  --border-card:  #e2e4dc;
+  --btn-green:    #485c45;
   --btn-green-hover: #3b4d39;
 }
+
 .icono {
   width: 14px;
   height: 14px;
-  margin-left: 6px;
   margin: 0 10px;
 }
 
 html, body {
   width: 100%;
-  height: 100%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-main);
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-dark);
-  overflow: hidden;
 }
 
 .app-container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
 }
 
-/* ── ICONOS DE INTERFAZ PREMIUM ── */
+/* ── ICONOS DE INTERFAZ ── */
 .ui-icon {
   width: 20px;
   height: 20px;
@@ -43,112 +59,88 @@ html, body {
   vertical-align: middle;
   flex-shrink: 0;
 }
-
 .ui-icon-large { width: 24px; height: 24px; stroke-width: 1.8; }
 .ui-icon-small { width: 16px; height: 16px; stroke-width: 1.5; }
 
-/* ── MENÚ LATERAL IZQUIERDO ── */
-aside {
-  width: 280px;
-  background-color: var(--sidebar-green);
-  padding: 40px 24px;
+/* ── SIDEBAR (estilo general.css) ────────────────────────── */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--green-dark);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-shrink: 0;
-  box-shadow: 4px 0 25px rgba(0,0,0,0.02);
+  padding: 24px 0 20px;
+  overflow: hidden;
+  z-index: 100;
 }
 
-.logo-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
+.sidebar__deco {
+  position: absolute;
+  bottom: 60px; left: -30px;
+  width: 140px; height: 140px;
+  background: radial-gradient(circle at 60% 60%, rgba(255,255,255,.06), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.brand {
+.sidebar__brand {
   display: flex;
   align-items: center;
-  gap: 0; 
-  margin-bottom: 45px;
-  padding-left: 0px;
-  color: var(--white);
+  gap: 10px;
+  padding: 0 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
 }
+.sidebar__brand-icon { font-size: 26px; filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
+.sidebar__brand-name { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: #fff; letter-spacing: .02em; }
+.sidebar__brand-sub  { font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .04em; }
 
-.brand-name {
- font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  margin-left: -15px; 
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.menu a {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.25s ease;
-}
-
-.menu a i {
-  font-size: 26px;
-  color: rgba(255, 255, 255, 0.5);
-  transition: color 0.25s ease;
-}
-
-.menu a:hover {
-  color: var(--white);
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.menu a.active {
-  background-color: var(--white);
-  color: var(--sidebar-green);
-  box-shadow: 0 8px 20px rgba(44, 56, 43, 0.12);
-}
-.menu a.active i { color: var(--sidebar-green); }
-
-.logout {
-  margin-top: auto;
-  text-decoration: none;
-}
-
-.logout span {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 12px 20px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
-  transition: all 0.2s;
-  width: 100%;
-}
-.logout span i { font-size: 26px; }
-.logout:hover span { 
-  background: rgba(255, 255, 255, 0.12); 
-  color: var(--white);
-}
-
-/* ── CONTENEDOR DE VISTA DERECHA ── */
-.content-wrapper {
+.sidebar__nav {
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 2px;
+  padding: 16px 12px;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  color: rgba(255,255,255,.65);
+  font-size: 13.5px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background .18s, color .18s;
+}
+.sidebar__link:hover        { background: rgba(255,255,255,.08); color: #fff; }
+.sidebar__link--active      { background: rgba(255,255,255,.15); color: #fff; font-weight: 500; }
+
+.sidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  color: rgba(255,255,255,.5);
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: auto;
+  text-decoration: none;
+  transition: color .18s;
+}
+.sidebar__logout:hover { color: rgba(255,255,255,.85); }
+
+/* ── CONTENEDOR DE VISTA DERECHA ── */
+.content-wrapper {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--green-bg);
 }
 
 header {
@@ -158,6 +150,8 @@ header {
   align-items: center;
   justify-content: flex-end;
   gap: 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .icon-bell-btn {
@@ -183,7 +177,7 @@ header {
 }
 .user-avatar {
   width: 28px; height: 28px;
-  background-color: var(--sidebar-green);
+  background-color: var(--green-dark);
   color: var(--white);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -200,6 +194,7 @@ main {
   font-size: 13px;
   color: var(--text-muted);
   margin-bottom: 12px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -231,13 +226,13 @@ main {
   gap: 30px;
 }
 
-/* ── TARJETAS CONTENEDORAS ── */
+/* ── TARJETAS ── */
 .florae-card {
   background-color: var(--white);
   border: 1px solid var(--border-card);
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 10px 30px rgba(82, 104, 79, 0.02);
+  box-shadow: 0 10px 30px rgba(82,104,79,.02);
 }
 
 .card-title {
@@ -249,9 +244,9 @@ main {
   color: var(--text-dark);
   margin-bottom: 24px;
 }
-.card-title .ui-icon { color: var(--sidebar-green); }
+.card-title .ui-icon { color: var(--green-dark); }
 
-/* ── COMPONENTES DE FORMULARIO ── */
+/* ── FORMULARIO ── */
 .form-group { margin-bottom: 20px; }
 .form-group:last-child { margin-bottom: 0; }
 
@@ -272,9 +267,9 @@ main {
   font-size: 14.5px;
   color: var(--text-dark);
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color .2s;
 }
-.input-field:focus { border-color: var(--sidebar-green); }
+.input-field:focus { border-color: var(--green-dark); }
 
 .textarea-field {
   width: 100%;
@@ -286,11 +281,11 @@ main {
   line-height: 1.6;
   color: #1e241d;
   font-family: 'Lato', sans-serif;
-  font-style: normal;
   resize: vertical;
   min-height: 150px;
   outline: none;
 }
+.textarea-field:focus { border-color: var(--green-dark); }
 
 .static-inputs-container {
   display: flex;
@@ -322,9 +317,11 @@ main {
   font-weight: 600;
   cursor: pointer;
   text-align: center;
+  transition: background .18s;
 }
+.btn-action-block:hover { background-color: var(--btn-green-hover); }
 
-/* ── BARRA DE ACCIÓN INFERIOR ── */
+/* ── BARRA INFERIOR ── */
 .footer-action-bar {
   grid-column: 1 / -1;
   display: flex;
@@ -333,6 +330,7 @@ main {
   margin-top: 10px;
   padding-top: 10px;
 }
+
 .btn-cancel {
   background: var(--white);
   border: 1px solid #cbd0c7;
@@ -342,7 +340,9 @@ main {
   font-size: 14.5px;
   font-weight: 600;
   cursor: pointer;
+  transition: background .15s, border-color .15s;
 }
+.btn-cancel:hover { background: var(--green-pale); border-color: var(--green-dark); }
 
 .btn-submit {
   background: var(--btn-green);
@@ -356,4 +356,6 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: background .18s;
 }
+.btn-submit:hover { background: var(--btn-green-hover); }

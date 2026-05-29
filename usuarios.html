@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="usuarios.css">
+    <title>usuario</title>
+</head>
+<body>
+     <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__brand-icon"><img class="icono" src="/imagenes/logo.png" alt="logo"></span>
+      <div>
+        <div class="sidebar__brand-name">Florae</div>
+        <div class="sidebar__brand-sub">Panel de administración</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="sidebar__link" href="dashboard.html"><span><img class="icono" src="/imagenes/casa.png" alt="Dashboard">Dashboard</span></a>
+      <a class="sidebar__link" href="plantas.html"><span><img class="icono" src="/imagenes/leaf .png" alt="Plantas">Plantas</span></a>
+      <a class="sidebar__link" href="/Tratamientoplaga.html"><span><img class="icono" src="/imagenes/control-de-plagas.png" alt="Tratamientos">Plagas</span></a>
+      <a class="sidebar__link sidebar__link--active" href="usuarios.html"><span><img class="icono" src="/imagenes/user.png" alt="Usuarios">Usuarios</span></a>
+      <a class="sidebar__link" href="historial-cambios.html"><span><img class="icono" src="/imagenes/clock.png" alt="Historial de cambios">Historial de cambios</span></a>
+      <a class="sidebar__link" href="/general.html"><span><img class="icono" src="/imagenes/Vector.png" alt="Configuración">Configuración</span></a>
+    </nav>
+    <div class="sidebar__deco"></div>
+    <a class="sidebar__logout" href="/cerrar-sesion.html"><img class="icono" src="/imagenes/salida-de-incendios.png" alt="Cerrar Sesión">Cerrar sesión</a>
+  </aside>
+ 
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Panel de administración <span class="leaf">🌿</span></h1>
+        <p>Bienvenido de nuevo, Administrador</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="topbar__bell" aria-label="Notificaciones"><img class="icono" src="/imagenes/campana2.png" alt="Dashboard"></button>
+        <div class="topbar__user">
+          <div class="topbar__avatar-img">
+            <span><img class="icono" src="/imagenes/Usuario.png" alt="Dashboard"></span>
+          </div>
+          <span>Administrador</span>
+          <span class="topbar__chevron">▾</span>
+        </div>
+      </div>
+    </header>
+ 
+    <div class="content">
+ 
+      <!-- Gestión de Usuarios -->
+      <div class="card">
+        <div class="card__header">
+          <span class="card__icon"><img class="icono" src="/imagenes/Usuario.png" alt="Dashboard"></span>
+          <h2 class="card__title">Gestión de Usuarios</h2>
+        </div>
+ 
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <label class="toolbar__label">Buscador</label>
+            <div class="search-bar">
+              <span class="search-bar__icon">🔍</span>
+              <input class="search-bar__input" type="text" placeholder="Buscador" />
+            </div>
+          </div>
+          <button class="btn-add">+ Agregar Usuario</button>
+        </div>
+ 
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" /></th>
+              <th>Seleccionar</th>
+              <th>Nombre</th>
+              <th>Correo electrónico</th>
+              <th>Estado</th>
+              <th>Fecha de creación</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td></td>
+              <td class="user-name-cell">
+                <img class="user-avatar" src="/imagenes/user.png" alt="Ana García" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="user-avatar-fallback">AG</div>
+                Ana García
+              </td>
+              <td>a.garcia@email.com</td>
+              <td><span class="badge badge--activo">● Activo</span></td>
+              <td><span class="fecha-primary">12 Abr 2024</span><span class="fecha-secondary">10:15 a.m.</span></td>
+              <td><button class="btn-eliminar" onclick="abrirModal(this)">🗑 Eliminar</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td></td>
+              <td class="user-name-cell">
+                <img class="user-avatar" src="/imagenes/user.png" alt="David Muñoz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="user-avatar-fallback">DM</div>
+                David Muñoz
+              </td>
+              <td>d.munoz@email.com</td>
+              <td><span class="badge badge--suspendido">● Suspendido</span></td>
+              <td><span class="fecha-primary">05 Mar 2024</span><span class="fecha-secondary">02:30 p.m.</span></td>
+              <td><button class="btn-eliminar" onclick="abrirModal(this)">🗑 Eliminar</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td></td>
+              <td class="user-name-cell">
+                <img class="user-avatar" src="/imagenes/user.png" alt="David Muñoz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="user-avatar-fallback">DM</div>
+                David Muñoz
+              </td>
+              <td>d.munoz2@email.com</td>
+              <td><span class="badge badge--activo">● Activo</span></td>
+              <td><span class="fecha-primary">28 Feb 2024</span><span class="fecha-secondary">09:45 a.m.</span></td>
+              <td><button class="btn-eliminar" onclick="abrirModal(this)">🗑 Eliminar</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td></td>
+              <td class="user-name-cell">
+                <img class="user-avatar" src="/imagenes/user.png" alt="María Fernández" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="user-avatar-fallback">MF</div>
+                María Fernández
+              </td>
+              <td>m.fernandez@email.com</td>
+              <td><span class="badge badge--activo">● Activo</span></td>
+              <td><span class="fecha-primary">15 Feb 2024</span><span class="fecha-secondary">03:20 p.m.</span></td>
+              <td><button class="btn-eliminar" onclick="abrirModal(this)">🗑 Eliminar</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td></td>
+              <td class="user-name-cell">
+                <img class="user-avatar" src="/imagenes/user.png" alt="Roberto López" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="user-avatar-fallback">RL</div>
+                Roberto López
+              </td>
+              <td>r.lopez@email.com</td>
+              <td><span class="badge badge--activo">● Activo</span></td>
+              <td><span class="fecha-primary">15 Ene 2024</span><span class="fecha-secondary">03:20 p.m.</span></td>
+              <td><button class="btn-eliminar" onclick="abrirModal(this)">🗑 Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+ 
+        <!-- Paginación -->
+        <div class="pagination">
+          <button class="page-btn page-btn--arrow">&#8249;</button>
+          <button class="page-btn page-btn--active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">4</button>
+          <button class="page-btn page-btn--arrow">&#8250;</button>
+        </div>
+      </div>
+ 
+      <!-- Resumen de Usuarios -->
+      <div class="card card--resumen">
+        <h2 class="resumen__title">Resumen de Usuarios</h2>
+        <div class="resumen__grid">
+          <div class="resumen__item">
+            <span class="resumen__icon">👤</span>
+            <div>
+              <div class="resumen__label">Total Usuarios</div>
+              <div class="resumen__value">256</div>
+            </div>
+          </div>
+          <div class="resumen__item">
+            <span class="resumen__icon">👤</span>
+            <div>
+              <div class="resumen__label">Usuarios Activos</div>
+              <div class="resumen__value">210</div>
+            </div>
+          </div>
+          <div class="resumen__item">
+            <span class="resumen__icon">👤</span>
+            <div>
+              <div class="resumen__label">Usuarios Suspendidos</div>
+              <div class="resumen__value">46</div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </main>
+ 
+  <!-- Modal de confirmación -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal__header">
+        <span class="modal__icon">🚫</span>
+        <h3 class="modal__title">Suspender Usuario</h3>
+      </div>
+      <p class="modal__body">¿Deseas suspender este usuario?</p>
+      <div class="modal__actions">
+        <button class="modal__btn modal__btn--cancel" onclick="cerrarModal()">[ Cancelar ]</button>
+        <button class="modal__btn modal__btn--confirm" onclick="confirmarEliminar()">[ Confirmar ]</button>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    let filaActiva = null;
+ 
+    function abrirModal(btn) {
+      filaActiva = btn.closest('tr');
+      document.getElementById('modalOverlay').classList.add('modal-overlay--visible');
+    }
+ 
+    function cerrarModal() {
+      document.getElementById('modalOverlay').classList.remove('modal-overlay--visible');
+      filaActiva = null;
+    }
+ 
+    function confirmarEliminar() {
+      if (filaActiva) {
+        filaActiva.remove();
+      }
+      cerrarModal();
+    }
+ 
+    // Cerrar al hacer clic fuera del modal
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) cerrarModal();
+    });
+  </script>
+</body>
+</html>
