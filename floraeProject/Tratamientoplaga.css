@@ -19,22 +19,20 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--main-bg
 .action-icon-btn { border: 1px solid var(--border); background: white; cursor: pointer; border-radius: 6px; padding: 4px 8px; }
 .action-icon-btn.del:hover { background: #fde8e8; }
 
-
 .card-description{
     background:#f5f7f2;
     border:1px solid #e1e7dc;
     border-radius:14px;
     padding:14px 16px;
-    margin:16px 0 22px;
+    margin:16px 0 18px;
     font-size:14px;
     color:#5e665d;
     line-height:1.6;
     text-align:center;
-
-    min-height:120px;
+    min-height:95px;
 
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:center;
 }
 
